@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>zonelets themes</title>
+    <!-- The description is not directly visible on the page. But it can show up in certain places like search engines. Probably unnecessary for most pages in your blog. -->
+    <meta name="description" content="every zonelets theme i can find">
+    <!-- This specifies the favicon (little icon on the browser tab) -->
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon"/>
+    <!-- This helps our site look consistent across devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <!-- Here's the link to our CSS stylesheet! -->
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="./style/style.css"/>
+    <script>
+    function setStyleSheet(url){
+       var stylesheet = document.getElementById("stylesheet");
+       stylesheet.setAttribute('href', url);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+    <div id="header">This site requires JavaScript!</div>
+    <div id="content">    
+      
+      
+      <h1>Custom Zonelets Themes</h1>
+      
+      <p>This project attempts to show off as many Zonelets themes as possible, to help people find the perfect one!</p>
+      <p>Click on the name of the theme to check it out, and click on the source to find where to get it.</p>
+      <p>Don't know how to use a theme? Go to the <a href="https://zonelets.net/posts/2020-11-08-Theme-Gallery.html">Zonelets Themes Page</a> and follow the instructions there!</p>
+      
+      <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Creator</th>
+          <th>Source</th>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/kidcoreYellow.css')" href="#">Kidcore</a></td>
+          <td>Moss</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/commentedReference.css')" href="#">Commented Reference</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/deepBlue.css')" href="#">Deep Blue</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/diamonds.css')" href="#">Diamonds</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/dustyTome.css')" href="#">Dusty Tome</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/fingerlessGloves.css')" href="#">Fingerless Gloves</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/hikingShoes.css')" href="#">Hiking Shoes</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/nude.css')" href="#">Nude</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/purplePaper.css')" href="#">Purple Paper</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/springSweetheart.css')" href="#">Spring Sweetheart</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/weatherbeaten.css')" href="#">Weatherbeaten</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+        <tr>
+          <td><a onclick="setStyleSheet('./style/y2k.css')" href="#">Y2K</a></td>
+          <td>Marina Kittaka</td>
+          <td><a href="https://zonelets.itch.io/zonelets">Zonelets Theme Pack</a></td>
+        </tr>
+      </table>
+      
+      <div id="recentpostlistdiv"></div>
+      
+    </div> <!-- end of div id="content" -->
+    <div id="footer"></div>
+    </div> <!-- end of div id="container" -->    
+  <!-- Here's the link to our JavaScript! -->
+  <script src="./script.js"></script>
+  </body>
+</html>

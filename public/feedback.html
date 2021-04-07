@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>feedback box</title>
+    <meta name="description" content="i can't wait to hear what you have to say!">
+    <link href="/base.css" rel="stylesheet">
+    <link href="/Neo98.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+  </head>
+  <body>
+  <script src="./scripts/fakefeedback.js"></script>
+  
+  <div class="mainbox">
+    
+    <div class="left">
+      <iframe src="/left.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"></iframe>
+    </div>
+    
+    <div class="middle">
+    	<div class="window">
+    	  <div class="title-bar">
+          <div class="title-bar-text">A Title Bar</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+    		<div class="window-body">
+    		
+          <h4>the almighty feedback box</h4>
+          
+          <DIV align=left>
+          <TABLE height=128 cellSpacing=0 cellPadding=0 width=512 border=0>
+            <TBODY>
+            <TR>
+              <TD vAlign=top width=512 height=128>
+                <FORM name=myform>
+                <P>give me feedback:</P>
+                <P><TEXTAREA onkeypress="return changer()" name=mytext rows=10 wrap=virtual cols=40></TEXTAREA><BR><BR>
+                <button onclick=resetit()>Submit Feedback</button>
+                </P></FORM></TD></TR></TBODY></TABLE>
+          </DIV>
+    				
+    		</div>
+    	</div>
+    </div>
+    
+    <div class="right">
+      <iframe src="/right.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"></iframe>
+    </div>
+    	
+  </div>
+  </body>
+</html>

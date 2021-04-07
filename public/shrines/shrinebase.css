@@ -1,0 +1,64 @@
+body {
+	text-align: inherit;
+}
+.box {
+  background: white;
+	padding: 10px;
+  border: 5px solid black;
+	width: fit-content;
+	max-width: 80%;
+	margin: 0 auto;
+}
+.collapsible {
+  margin: 0 auto;
+	margin-bottom: 5px;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: 2px solid black;
+	outline: none;
+}
+.content {
+  margin-top: -5px;
+  margin-bottom: 5px;
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	border: 2px solid black;
+	border-top: none;
+	outline: none;
+}
+.videobox {
+	text-align: center;
+	border: none;
+	background-image: url("https://missmoss.neocities.org/shrines/90sTVresizeUncentered.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-top: 99px;
+	padding-left: 139px;
+	padding-right: 146px;
+	padding-bottom: 259px;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.serif {
+  font-family: serif;
+}
+.sans-serif {
+  font-family: sans-serif;
+}
+.monospace {
+  font-family: monospace;
+}
+.cursive {
+  font-family: cursive;
+}
+.fantasy {
+  font-family: fantasy;
+}

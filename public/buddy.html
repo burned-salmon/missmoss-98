@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zonelets Buddy</title> <!-- If you leave title as "Blog Post", it will automatically be updated to the post title -->
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <link href="./style/style.css" rel="stylesheet" type="text/css" media="all">  
+    <style> 
+      textarea { width: 100%; min-height: 20em; }
+      .code { font-family: monospace; }
+    </style>
+    <script>
+
+const CORS_PROXY = "https://neocities-cors.glitch.me";
+const TEMPLATE_LOCATION = "./posts/YYYY-MM-DD-Template.html";
+const TEMPLATE_PATTERN = /<p>\s*Ready to write\? Replace this text with your first paragraph!\s*<\/p>/ms;
+
+async function upload(apikey, destination, blob) {
+  const headers = new Headers();
+  headers.append("Authorization", "Bearer " + apikey);
+
+  const body = new FormData();
+  body.append(destination, blob);
+
+  return fetch(CORS_PROXY + "/api/upload", {
+    method: "POST",
+    headers,
+    body,
+    mode: "cors",
+  });
+}
+
+function YYYYMMDD(date) {
+  const offset = date.getTimezoneOffset()
+  date = new Date(date.getTime() - (offset*60*1000))
+  return date.toISOString().split('T')[0]
+}
+
+function openKeyPage() {
+  const sitenameInput = document.getElementById("username");
+  const sitename = sitenameInput.value;
+  window.open(`https://neocities.org/settings/${sitename}#api_key`);
+}
+
+function downloadCopy() {
+  fetch(window.location)
+  .then(resp => resp.blob())
+  .then(blob => {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = 'buddy.html';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+  })
+}
+
+async function embedFile(accept) {
+  return new Promise((resolve, reject) => {
+    const apikeyInput = document.getElementById("password");
+    const fileInput = document.createElement("input");
+    fileInput.setAttribute("type", "file");
+    fileInput.setAttribute("accept", accept);
+    fileInput.addEventListener("change", async () => {
+      const file = fileInput.files[0];
+      const date = YYYYMMDD(new Date());
+      const name = `${date}-${nanoid(5)}-${file.name}`;
+      const destination = `images/${name}`;
+      await upload(apikeyInput.value, destination, file)
+      resolve(destination);
+    });
+    fileInput.click();
+  });
+}
+
+async function embedImage() {
+  const bodyInput = document.getElementById("body");
+  bodyInput.disabled = true;
+  const src = await embedFile("image/*");
+  bodyInput.value += `\n<img src="../${src}">`;
+  bodyInput.disabled = false;
+}
+
+async function embedAudio() {
+  const bodyInput = document.getElementById("body");
+  bodyInput.disabled = true;
+  const src = await embedFile("audio/*");
+  bodyInput.value += `\n<audio src="../${src}" controls>`;
+  bodyInput.disabled = false;
+}
+
+async function embedVideo() {
+  const bodyInput = document.getElementById("body");
+  bodyInput.disabled = true;
+  const src = await embedFile("video/*");
+  bodyInput.value += `\n<video src="../${src}" controls>`;
+  bodyInput.disabled = false;
+}
+
+async function start() {
+  const sitenameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const uploadButton = document.getElementById("upload");
+  
+  const titleInput = document.getElementById("title");
+  const bodyInput = document.getElementById("body");
+
+  const form = document.querySelector("form");
+
+  uploadButton.addEventListener("click", async (event) => {
+    uploadButton.disabled = true;
+    const sitename = sitenameInput.value;
+    const apikey = passwordInput.value;
+    const title = titleInput.value;
+    const body = bodyInput.value;
+    
+    // generate html
+    const template = await fetch(TEMPLATE_LOCATION).then((response) => response.text());
+    const html = template.replace(TEMPLATE_PATTERN, body);
+    const data = new Blob([html], { type: "text/html" });
+    
+    // decide page name
+    const name = title.replace(/[^a-z0-9]/gi, '_');
+    const date = YYYYMMDD(new Date());
+    const destination = `posts/${date}-${name}.html`;
+
+    // update posts array
+    const prevScript = await fetch("./scripts/script.js").then((response) => response.text());
+    const nextScript = prevScript.replace(/(let postsArray = \[)/ms, `$1\n["${destination}", encodeURI("${title}")],`);
+
+    // get site info and upload file
+    const querying = fetch("https://neocities-cors.glitch.me/api/info?sitename=" + sitename).then((response) => response.json());
+    const uploading = upload(apikey, destination, data).then((response) => response.text());
+    const updateScript = upload(apikey, "scripts/script.js", new Blob([nextScript], { type: "text/javascript" }));
+    const [info, result, _] = await Promise.all([querying, uploading, updateScript]);
+
+    // force browser to reload script.js (so posts update)
+    await fetch("./scripts/script.js");
+
+    // tell the caller the final upload url
+    const domain = info.info.domain || `${sitename}.neocities.org`;
+    const url = `https://${domain}/${destination}`;
+    window.open(url);
+  });
+}
+
+/**
+ * @param {File} file 
+ * @return {Promise<string>}
+ */
+async function dataURLFromFile(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => resolve(/** @type {string} */ (reader.result));
+    reader.readAsDataURL(file); 
+  });
+}
+
+// from https://github.com/ai/nanoid/blob/master/non-secure/index.js
+const urlAlphabet = 'ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXIjQW';
+function nanoid(size = 21) {
+  let id = '';
+  let i = size;
+  while (i--) id += urlAlphabet[(Math.random() * 64) | 0];
+  return id
+}
+
+    </script>
+  </head>
+  <body onload="start()">
+    <div id="container">
+    <div id="header">...</div>
+    <div id="content">
+      <h1>Zonelets Buddy</h1>
+      <h2>Compose</h2>
+      <form action="#">
+        <h3>sitename & api key</h3>
+        <!-- change the value to your own neocities site name -->
+        <input id="username" type="text" name="username" value="missmoss">
+        <!-- DO NOT put a value here, this page is publically accesible -->
+        <input id="password" type="password" name="password"><button type="button" onClick="openKeyPage()">get key</button>
+        <h3>title</h3>
+        <input id="title" type="text" value="Post Title">
+        <h3>body</h3>
+        <textarea id="body">&lt;p&gt;Ready to write? Replace this text with your first paragraph!&lt;/p&gt;</textarea>
+        <h3>media</h3>
+        <button onclick="embedImage()" type="button">embed image</button>
+        <button onclick="embedAudio()" type="button">embed audio</button>
+        <button onclick="embedVideo()" type="button">embed video</button>
+        <h3>publish</h3>
+        <button id="upload" type="button">upload</button>
+      </form>
+      <h2>What it does</h2>
+      <ol>
+        <li>Makes a copy of a template post at <span class="code">posts/YYYY-MM-DD-Template.html</span></li>
+        <li>Replaces <span class="code">&lt;p&gt;Ready to write? Replace this text with your first paragraph!&lt;/p&gt;</span> in the copy with your post</li>
+        <li>Updates <span class="code">scripts/scripts.js</span> with an additional entry in the <span class="code">postsArray</span></li>
+        <li>SECURITY NOTE: Uses <a href="https://glitch.com/edit/#!/neocities-cors">this CORS proxy</a> to access the neocities API. This means you are trusting me not to intercept your neocities api key and mess with your site. It is fairly straight-forward to make your own free copy of the proxy and use that instead if you like. If you suspect your api key is no longer safe you can revoke it by generating a new one in the neocities settings.</li>
+      </ol>
+      <h2>Setup</h2>
+      <ol>
+        <li><button onclick="downloadCopy()">Download Zonelets Buddy</button>
+        <li>Copy <span class="code">buddy.html</span> to the same folder as <span class="code">index.html</span></li>
+        <li>Create a template post at <span class="code">posts/YYYY-MM-DD-Template.html</span></li>
+        <li>Make sure the template uses <span class="code">&lt;p&gt;Ready to write? Replace this text with your first paragraph!&lt;/p&gt;</span> as the post body</li>
+      </ol>
+    </div> <!-- end of div id="content" -->
+    <div id="footer"></div>
+    </div> <!-- end of div id="container" -->
+  <!-- Here's the link to our JavaScript! -->
+  <script src="./scripts/script.js"></script>
+  </body>
+</html>

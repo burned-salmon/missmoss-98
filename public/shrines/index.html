@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>shrines</title>
+    <meta name="description" content="wow look you found my shrine page">
+    <meta charset="UTF-8">
+    <script src="/scripts/scriptMain.js"></script>
+    <script src="/scripts/scriptCursor.js"></script>
+    <link href="/themeBase.css" rel="stylesheet">
+    <link href="/Neo98.css" rel="stylesheet">
+    <link href="/themeMain.css" rel="stylesheet">
+    <script>
+      loadCursor();
+
+    </script>
+    <style>
+      img {
+        margin-right: 4px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <script>
+      createCursor();
+
+    </script>
+    <header>
+      <iframe src="/header.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove();"></iframe>
+    </header>
+    <main>
+
+      <div class="left">
+        <iframe src="/left.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove();"></iframe>
+      </div>
+
+      <div class="middle">
+        <section id="home">
+          <div class="window">
+            <div class="title-bar">
+              <div class="title-bar-text">shrines/index.html</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="hideThing('home');"></button>
+              </div>
+            </div>
+            <div class="window-body">
+
+              <h4>wub wub wub</h4>
+              <p>There are many shrines to take a look at. Let's see some!</p>
+              <p>None of these are "done" by the way.</p>
+
+              <a href="/shrines/analoghorror.html"><img src="/0x0/vhs.gif" height="50" alt="Analog Horror" title="Analog Horror"></a>
+              <a href="/shrines/ena.html"><img src="https://static.wikia.nocookie.net/enajoelg/images/7/7c/Ena_spin.gif" height="50" alt="ENA" title="ENA"></a>
+              <a href="/shrines/fnf.html"><img src="https://static.wikia.nocookie.net/fridaynightfunking/images/2/27/ITSSPOOKYMONTH.gif" height="50" alt="Friday Night Funkin'" title="Friday Night Funkin'"></a>
+              <a href="/shrines/michealwave.html"><img src="/0x0/microwave.gif" height="50" alt="micheal wave" title="micheal wave"></a>
+              <a href="/shrines/scp.html"><img src="" height="50" alt="SCP" title="Secure. Contain. Protect."></a>
+              <a href="/shrines/xnopyt.html"><img src="" height="50" alt="Xnopyt" title="Xnopyt"></a>
+
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="right">
+        <iframe src="/right.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove();"></iframe>
+      </div>
+
+    </main>
+    <footer>
+      <iframe src="/footer.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove();"></iframe>
+    </footer>
+  </body>
+
+</html>

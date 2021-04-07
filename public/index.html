@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>mossy homepage</title>
+    <meta name="description" content="may your soul fill with rainwater and your lungs swell with flowers">
+    <meta charset="UTF-8">
+    <script src="/scripts/scriptMain.js"></script>
+    <script src="/scripts/scriptCursor.js"></script>
+    <link href="/themeBase.css" rel="stylesheet">
+    <link href="/Neo98.css" rel="stylesheet">
+    <link href="/themeMain.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/scripts/sorttable.js"></script>
+    <script src="/scripts/jskRandomOrder.js"></script>
+    <script>
+      loadCursor();
+
+    </script>
+    <script src="/scripts/fakefeedback.js"></script>
+    <style>
+    .jsclass body .randomordercontent{
+      display: none;
+    }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      createCursor();
+
+    </script>
+    <header>
+      <iframe src="/header.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove();"></iframe>
+    </header>
+    <main>
+
+      <div class="left">
+        <iframe src="/left.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove();"></iframe>
+      </div>
+
+      <div class="middle">
+
+        <section id="home">
+          <div class="window">
+            <div class="title-bar">
+              <div class="title-bar-text">index.html</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize" onclick="minimizeThing('home');"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="hideThing('home');"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <p>Wow! A visitor!</p>
+              <p><b>[<time datetime="2021-04-06">4/6/2021</time>]</b> I've added some header and footer stuff. Also, the [x] buttons on the windows work. If you close something important, you can get it back by refreshing the page. Also, the fish now have names. They are Kevin, Bartholomew, Jimmy, Girth, Lyndon, and Kyle.</p>
+              <p><b>[<time datetime="2021-04-04">4/4/2021</time>]</b> We have some new fish that follow your cursor. They're scared of some pages on this site (who can blame them?) so don't be too harsh on them when they don't follow you there.</p>
+              <p><b>[<time datetime="2021-03-31">3/31/2021</time>]</b> New favicon is live, guess what fandom it's from? I made it using <a href="https://www.reddit.com/r/JoelG/comments/mbabia/this_ena_redesign_lookin_clean/gshvy5j/">this</a>, thank you DuneDude!</p>
+              <a href="https://pixpet.net/u/MissMoss"><img src="https://pixpet.net/usersc/images/share/231473_2aae4d2f0dbe0f3f_B.png" alt="Pixpet"></a>
+              <a href="https://pixpet.net/u/MissMoss"><img src="https://pixpet.net/usersc/images/share/226132_2e906a723f64766f_B.png" alt="Pixpet"></a>
+              <p>If a page looks like Winodws 98, it is made with <a href="/Neo98.css">Neo98</a>, my adaptation of <a href="https://jdan.github.io/98.css/">98.css</a></p>
+              <p>If a page looks like Winodws XP, it is made with <a href="/NeoXP.css">NeoXP</a>, my adaptation of <a href="https://botoxparty.github.io/XP.css/">XP.css</a></p>
+              <br>
+
+              <form action="#" onsubmit="showThing(document.getElementById('openSelection').value);return false">
+                <label for="window">Open something:</label>
+                <select name="window" id="openSelection">
+                  <option value="feedback">Feedback Box</option>
+                  <option value="tables">Tables</option>
+                  <option value="tools">Tools</option>
+                  <option value="cyberpets">Cyberpets</option>
+                </select>
+                <button type="submit">Open it</button>
+              </form>
+              <br>
+              <script language="JavaScript" src="http://freehostedscripts.net/fq.php"></script>
+            </div>
+          </div>
+        </section>
+
+        <br>
+
+        <section id="feedback">
+          <div class="window">
+            <div class="title-bar">
+              <div class="title-bar-text">what used to be feedback.html</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize" onclick="minimizeThing('feedback');"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="hideThing('feedback');"></button>
+              </div>
+            </div>
+            <div class="window-body">
+
+              <h4>the almighty feedback box</h4>
+
+              <DIV align=left>
+                <TABLE height=128 cellSpacing=0 cellPadding=0 width=512 border=0>
+                  <TBODY>
+                    <TR>
+                      <TD vAlign=top width=512 height=128>
+                        <FORM name=myform>
+                          <P>give me feedback:</P>
+                          <P><TEXTAREA onkeypress="return changer()" name=mytext rows=10 wrap=virtual cols=40></TEXTAREA><BR><BR>
+                            <button onclick=resetit()>Submit Feedback</button>
+                          </P>
+                        </FORM>
+                      </TD>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+              </DIV>
+            </div>
+          </div>
+        </section>
+
+        <br>
+
+        <section id="tables">
+          <div class="window">
+            <div class="title-bar">
+              <div class="title-bar-text">this was tables.html on my old site</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize" onclick="minimizeThing('tables');"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="hideThing('tables');"></button>
+              </div>
+            </div>
+            <div class="window-body">
+
+              <p>Welcome to my collection of interesting charts, tables, and graphs. Mostly tables for now.</p>
+              <p>This is always a WIP. I love adding new stuff!</p>
+              <p>I used <a href="https://www.kryogenix.org/code/browser/sorttable/">sorttable</a> to allow the tables below to be sorted!</p>
+              <hr>
+              <h4>Songs sorted by the number of times the lyrics contain the title</h4>
+              <table class="sortable">
+                <tr>
+                  <th>Title</th>
+                  <th>Artist</th>
+                  <th>Instances of title in lyrics</th>
+                  <th>Percentage</th>
+                </tr>
+                <tr>
+                  <td><i>Around the World</i></td>
+                  <td>Daft Punk</td>
+                  <td>144</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td><i>Tequila</i></td>
+                  <td>The Champs</td>
+                  <td>3</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td><i>Baby</i></td>
+                  <td>Justin Beiber</td>
+                  <td>56</td>
+                  <td>23%</td>
+                </tr>
+              </table>
+
+            </div>
+          </div>
+        </section>
+
+        <br>
+
+        <section id="tools">
+          <div class="window">
+            <div class="title-bar">
+              <div class="title-bar-text">some_neat_tools.fileextention</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize" onclick="minimizeThing('tools');"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="hideThing('tools');"></button>
+              </div>
+            </div>
+            <div class="window-body">
+
+              <h4>Web Tools</h4>
+              <ul>
+              <div class="randomordercontent group1"><li><a href="http://www.grsites.com" target="_blank">GRSites</a></li></div>
+              <div class="randomordercontent group1"><li><a href="http://masterdiz.com" target="_blank">MasterDiz</a></li></div>
+              <div class="randomordercontent group1"><li><a href="http://www.neatsite.com/webtools.htm" target="_blank">NeatSite</a></li></div>
+              </ul>
+              <br>
+              <h4>Graphics</h4>
+              <p>Check the sidebar to the right to see other sources of graphics!</p>
+              <ul>
+              <div class="randomordercontent group2"><li><a href="http://www.textfiles.com/underconstruction/" target="_blank">TextFiles "Under Construction"</a></li></div>
+              <div class="randomordercontent group2"><li><a href="https://kirbysdreamsite.neocities.org/gifs.html" target="_blank">Kirby GIFs</a></li></div>
+              </ul>
+              <br>
+              <h4>Free Hosting</h4>
+              <ul>
+              <div class="randomordercontent group3"><li><a href="http://candyrain.org" target="_blank">CandyRain</a></li></div>
+              <div class="randomordercontent group3"><li><a href="https://infinityfree.net" target="_blank">InfinityFree</a></li></div>
+              </ul>
+              <br>
+              <h4>Fun Stuff</h4>
+              <ul>
+              <div class="randomordercontent group4"><li><a href="https://tholman.com/cursor-effects/" target="_blank">Cursor Effects</a> (use the "Elastic Emoji" one to have your own fish!)</li></div>
+              <div class="randomordercontent group4"><li><a href="https://googol.neocities.org/neolink/" target="_blank">NeoLink (ads for Neocities)</a></li></div>
+              </ul>
+
+              <script type="text/javascript">
+                randomordercontentdisplay.init()
+
+              </script>
+
+            </div>
+          </div>
+        </section>
+
+        <br>
+
+        <section id="cyberpets">
+          <div class="window">
+            <div class="title-bar">
+              <div class="title-bar-text">this was adoptables.html on my old site</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize" onclick="minimizeThing('cyberpets');"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="hideThing('cyberpets');"></button>
+              </div>
+            </div>
+            <div class="window-body">
+
+              <p>Ah, cyberpets, a classic from long before I became a proficient Internet user. The vast majority of go-to sites for them are no longer functional. However, some of them are still up and running! Most of the cyberpet adoption agency indexes I've found have included mostly dead links that don't work. I am committed to placing only working, up-to-date links on this page here.</p>
+              <p>This page is also, like, super WIP.</p>
+              <p>I used <a href="https://www.kryogenix.org/code/browser/sorttable/">sorttable</a> to allow the table below to be sorted!</p>
+
+              <h4>Elsewhere on the Web</h4>
+              <table class="sortable">
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Comments</th>
+                </tr>
+                <tr>
+                  <td><a href="http://www.angelfire.com/amiga/merbabe/" target="_blank">Angel's Chimera Dreams</a></td>
+                  <td>no</td>
+                  <td>no</td>
+                </tr>
+                <tr>
+                  <td><a href="http://jackiesguineapiggies.com/cyberpetadoptions.html" target="_blank">Jackie's Guinea Piggies</a></td>
+                  <td>Guinea pigs</td>
+                  <td>no</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.angelfire.com/mt/lissasolo/" target="_blank">Lissy's Cyber-pet Adoption Agency</a></td>
+                  <td>no</td>
+                  <td>no</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.mysticalplace.com/birthstone/birthstone.html" target="_blank">Mystical Palace</a></td>
+                  <td>Birthstone Guardians</td>
+                  <td>no</td>
+                </tr>
+                <tr>
+                  <td><a href="http://jess001.tripod.com/adopt.html" target="_blank">Pegasus "Adopt a Wildlife"</a></td>
+                  <td>Aliens</td>
+                  <td>no</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.sunnykidsplay.com/cyberpetsmain.php" target="_blank">Sunnykids Cyberpets</a></td>
+                  <td>Aliens</td>
+                  <td>no</td>
+                </tr>
+                <tr>
+                  <td><a href="http://alienship.tripod.com" target="_blank">Tara's Alien World</a></td>
+                  <td>Aliens</td>
+                  <td>no</td>
+                </tr>
+                <tr>
+                  <td><a href="http://tonberry-cactuar.tripod.com" target="_blank">Tonberry-Cactaur Adoption Agency</a></td>
+                  <td>Aliens</td>
+                  <td>no</td>
+                </tr>
+                <tr>
+                  <td><a href="http://velvetdragon.com/cyberslugs/" target="_blank">Velvet Dragon Cyberslugs</a></td>
+                  <td>no</td>
+                  <td>no</td>
+                </tr>
+              </table>
+
+              <h4>WayBack Machine / Oocities</h4>
+              <table class="sortable">
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Comments</th>
+                </tr>
+                <tr>
+                  <td><a href="http://www.oocities.org/capecanaveral/Lab/1378/adoptmol.html" target="_blank">Adopt-a-Molecule</a></td>
+                  <td>"Molecules"</td>
+                  <td>This thing had a club and everything. Woah.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://web.archive.org/web/20200121031526/http://www.bearjests.com/adopt/index.html" target="_blank">Bear Jests</a></td>
+                  <td>Bears, seals, etc.</td>
+                  <td>The most recent saves for this site are from earlier this year. I actually think that the site will come back online for real at some point, and when that happens, it'll be put back on the other table above.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://web.archive.org/web/20070112151116/http://www.billybear4kids.com/games/adopt-change25/critters.htm" target="_blank">Billy Bear's Computer Pals</a></td>
+                  <td>no</td>
+                  <td>Apparently this was some sort of kid's learning site, but of course it would make the most of this cyberpet trend.</td>
+                </tr>
+              </table>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="right">
+        <iframe src="/right.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove();"></iframe>
+      </div>
+
+    </main>
+    <footer>
+      <iframe src="/footer.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove();"></iframe>
+    </footer>
+  </body>
+
+</html>
