@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>feedback box</title>
+    <meta name="description" content="i can't wait to hear what you have to say!">
+    <link href="/base.css" rel="stylesheet">
+    <link href="/Neo98.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+  </head>
+  <body>
+  <script src="./scripts/fakefeedback.js"></script>
+  
+  <div class="mainbox">
+    
+    <div class="left">
+      <iframe src="/left.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"></iframe>
+    </div>
+    
+    <div class="middle">
+    	<div class="window">
+    	  <div class="title-bar">
+          <div class="title-bar-text">A Title Bar</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+    		<div class="window-body">
+    		
+          <h4>If this can be seen, that means Push to Neocities worked!</h4>
+    				
+    		</div>
+    	</div>
+    </div>
+    
+    <div class="right">
+      <iframe src="/right.html" class="sidebarframe" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"></iframe>
+    </div>
+    	
+  </div>
+  </body>
+</html>
