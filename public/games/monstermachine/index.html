@@ -1,87 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Monster Machine</title>
-    <!-- The description is not directly visible on the page. But it can show up in certain places like search engines. Probably unnecessary for most pages in your blog. -->
-    <meta name="description" content="Create and adopt your own monster!">
-    <link rel="icon" href="/images/favicon.png" type="image/x-icon"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8"> 
-    <link href="/style/fingerlessGloves.css" rel="stylesheet" type="text/css" media="all">    
-<style>
-img {
-  position: absolute;
-  }
-.dragme{
-		position:relative;
-		cursor: move;
-	}
-</style>
 
-<script>
-function startDrag(e) {
-				// determine event object
-				if (!e) {
-					var e = window.event;
-				}
-                if(e.preventDefault) e.preventDefault();
+<head>
+  <title>Monster Machine</title>
+  <!-- The description is not directly visible on the page. But it can show up in certain places like search engines. Probably unnecessary for most pages in your blog. -->
+  <meta name="description" content="Create and adopt your own monster!">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link href="/style/fingerlessGloves.css" rel="stylesheet" type="text/css" media="all">
+  <style>
+    img {
+      position: absolute;
+    }
 
-				// IE uses srcElement, others use target
-				targ = e.target ? e.target : e.srcElement;
+    .dragme {
+      position: relative;
+      cursor: move;
+    }
+  </style>
 
-				if (targ.className != 'dragme') {return};
-				// calculate event X, Y coordinates
-					offsetX = e.clientX;
-					offsetY = e.clientY;
+  <script>
+    function startDrag(e) {
+      // determine event object
+      if (!e) {
+        var e = window.event;
+      }
+      if (e.preventDefault) e.preventDefault();
 
-				// assign default values for top and left properties
-				if(!targ.style.left) { targ.style.left='0px'};
-				if (!targ.style.top) { targ.style.top='0px'};
+      // IE uses srcElement, others use target
+      targ = e.target ? e.target : e.srcElement;
 
-				// calculate integer values for top and left 
-				// properties
-				coordX = parseInt(targ.style.left);
-				coordY = parseInt(targ.style.top);
-				drag = true;
+      if (targ.className != 'dragme') {
+        return
+      };
+      // calculate event X, Y coordinates
+      offsetX = e.clientX;
+      offsetY = e.clientY;
 
-				// move div element
-					document.onmousemove=dragDiv;
-                return false;
-				
-			}
-			function dragDiv(e) {
-				if (!drag) {return};
-				if (!e) { var e= window.event};
-				// var targ=e.target?e.target:e.srcElement;
-				// move div element
-				targ.style.left=coordX+e.clientX-offsetX+'px';
-				targ.style.top=coordY+e.clientY-offsetY+'px';
-				return false;
-			}
-			function stopDrag() {
-				drag=false;
-			}
-			window.onload = function() {
-				document.onmousedown = startDrag;
-				document.onmouseup = stopDrag;
-			}
-</script>
+      // assign default values for top and left properties
+      if (!targ.style.left) {
+        targ.style.left = '0px'
+      };
+      if (!targ.style.top) {
+        targ.style.top = '0px'
+      };
 
-  </head>
-  <body>
-  
-    <div id="container"><div id="content">
-    
+      // calculate integer values for top and left
+      // properties
+      coordX = parseInt(targ.style.left);
+      coordY = parseInt(targ.style.top);
+      drag = true;
+
+      // move div element
+      document.onmousemove = dragDiv;
+      return false;
+
+    }
+
+    function dragDiv(e) {
+      if (!drag) {
+        return
+      };
+      if (!e) {
+        var e = window.event
+      };
+      // var targ=e.target?e.target:e.srcElement;
+      // move div element
+      targ.style.left = coordX + e.clientX - offsetX + 'px';
+      targ.style.top = coordY + e.clientY - offsetY + 'px';
+      return false;
+    }
+
+    function stopDrag() {
+      drag = false;
+    }
+    window.onload = function() {
+      document.onmousedown = startDrag;
+      document.onmouseup = stopDrag;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div id="container">
+    <div id="content">
+
       <h1>The Monster Machine</h1>
       <p>Welcome to The Monster Machine! Use the parts provided below to create your own monster!</p>
       <p>Once you're done, you can adopt your creation and let it live on your website. Make sure to put this certificate somewhere on the site so people know where you got your monster from!</p>
-      
+
       <center>
-      <a href="https://missmoss.neocities.org/games/monstermachine"><img src="https://missmoss.neocities.org/games/monstermachine/certificate_2021.png" style="position:relative;"></a><br>
-      <textarea><a href="https://missmoss.neocities.org/games/monstermachine"><img src="https://i.imgur.com/Jwt0vWF.png"></a></textarea>
+        <a href="https://missmoss.neocities.org/games/monstermachine"><img src="https://missmoss.neocities.org/games/monstermachine/certificate_2021.png" style="position:relative;"></a><br>
+        <textarea><a href="https://missmoss.neocities.org/games/monstermachine"><img src="https://i.imgur.com/Jwt0vWF.png"></a></textarea>
       </center>
       <br>
-      
+
       <img src="./ear_triangle1.png" style="z-index:2;" class="dragme">
       <img src="./ear_triangle2.png" style="z-index:2;" class="dragme">
       <br>
@@ -110,11 +126,14 @@ function startDrag(e) {
       <img src="./wing_dragonright.png" style="z-index:0;" class="dragme">
       <img src="./wing_fairyleft.png" style="z-index:0;" class="dragme">
       <img src="./wing_fairyright.png" style="z-index:0;" class="dragme">
-      
-    </div><!--<div id="footer"></div>--></div>
-    
-    
-    <div id="container" style="color:black; background-color:white;"><div id="content">
+
+    </div>
+    <!--<div id="footer"></div>-->
+  </div>
+
+
+  <div id="container" style="color:black; background-color:white;">
+    <div id="content">
       <img src="./eye_c1.png" style="z-index:4;" class="dragme">
       <img src="./eye_c2.png" style="z-index:4;" class="dragme">
       <img src="./eye_dl1.png" style="z-index:4;" class="dragme">
@@ -140,21 +159,27 @@ function startDrag(e) {
       <img src="./mouth_big4.png" style="z-index:3;" class="dragme">
       <img src="./mouth_little1.png" style="z-index:3;" class="dragme">
       <img src="./mouth_little2.png" style="z-index:3;" class="dragme">
-      
-    </div><!--<div id="footer"></div>--></div>
-    
-    
-    <div id="container" style="color:white; background-color:#00ff00; height:600px;"><div id="content">
+
+    </div>
+    <!--<div id="footer"></div>-->
+  </div>
+
+
+  <div id="container" style="color:white; background-color:#00ff00; height:600px;">
+    <div id="content">
       <p>Assemble your monster here!</p>
       <img src="./extra_exclamation1.png" style="z-index:2;" class="dragme">
       <img src="./extra_exclamation2.png" style="z-index:2;" class="dragme">
       <img src="./extra_heart.png" style="z-index:9;" class="dragme">
       <img src="./extra_star.png" style="z-index:9;" class="dragme">
-    </div><!--<div id="footer"></div>--></div>
-  
-    <div id="container"><div id="content">
+    </div>
+    <!--<div id="footer"></div>-->
+  </div>
+
+  <div id="container">
+    <div id="content">
       <p>More parts down here...</p>
-      
+
       <img src="./body_blob1.png" style="z-index:1;" class="dragme">
       <img src="./body_blob2.png" style="z-index:1;" class="dragme">
       <img src="./body_circle1.png" style="z-index:1;" class="dragme">
@@ -163,21 +188,22 @@ function startDrag(e) {
       <img src="./body_dome1.png" style="z-index:1;" class="dragme">
       <img src="./body_oval1.png" style="z-index:1;" class="dragme">
       <img src="./body_triangle1.png" style="z-index:1;" class="dragme">
-      
+
       <p>Want to connect multiple body parts together? Here are some patches to help blend them together:</p>
       <img src="./patch_1.png" style="z-index:8;" class="dragme">
       <img src="./patch_2.png" style="z-index:8;" class="dragme">
       <img src="./patch_3.png" style="z-index:8;" class="dragme">
-      
+
       <div>
-      <hr>
-      <p>The Monster Machine is made by Moss</p>
-      
+        <hr>
+        <p>The Monster Machine is made by Moss</p>
+
       </div>
     </div>
-    </div>
-    
+  </div>
+
   <script src="/script.js"></script>
-  
-  </body>
+
+</body>
+
 </html>
