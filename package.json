@@ -1,16 +1,16 @@
 {
-  "name": "missmoss",
-  "version": "1.0.0",
-  "description": "The missmoss website package thingy",
-  "main": "index.js",
-  "repository": "github:M1ssM0ss/missmoss",
-  "scripts": {
-    "test": "test.js",
-    "build": "npm run clean && run-p build:*",
-  },
-  "keywords": [
-    "neocities"
-  ],
-  "author": "Miss Moss",
-  "license": "GPL-3.0-or-later"
+	"name": "missmoss",
+	"version": "1.0.0",
+	"description": "The missmoss website package thingy",
+	"main": "index.js",
+	"repository": "github:M1ssM0ss/missmoss",
+	"scripts": {
+		"test": "test.js",
+		"build": "npm run clean && run-p build:*"
+	},
+	"keywords": [
+		"neocities"
+	],
+	"author": "Miss Moss",
+	"license": "GPL-3.0-or-later"
 }
