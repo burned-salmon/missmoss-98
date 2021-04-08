@@ -5,16 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello, world!</title>
+  <script src="/scripts/nunjucks.js"></script>
+  <script src="/scripts/script.js"></script>
 </head>
 
 <body>
 
-  {% include "./_includes/partials/header.njk" %}
+  {% include "./_includes/partials/header.txt" %}
 
   {% block content %}
   {% endblock %}
 
-  {% include "./_includes/partials/footer.njk" %}
+  {% include "./_includes/partials/footer.txt" %}
 
 </body>
 
