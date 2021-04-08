@@ -1,22 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello, world!</title>
-  <script src="/scripts/nunjucks.js"></script>
-  <script src="/scripts/script.js"></script>
+  <title>{{ page_title }}</title>
+  <script src="../index.js">
 </head>
 
 <body>
 
-  {% include "./_includes/partials/header.txt" %}
 
-  {% block content %}
-  {% endblock %}
+  <p>Dinner is:
+     {{ dinner }}
+  </p>
 
-  {% include "./_includes/partials/footer.txt" %}
 
 </body>
 
