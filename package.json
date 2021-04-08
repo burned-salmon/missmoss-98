@@ -5,7 +5,8 @@
   "main": "index.js",
   "repository": "github:M1ssM0ss/missmoss",
   "scripts": {
-    "test": "jest"
+    "test": "test.js",
+    "build": "npm run clean && run-p build:*",
   },
   "keywords": [
     "neocities"
