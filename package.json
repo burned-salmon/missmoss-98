@@ -6,7 +6,10 @@
 	"repository": "github:M1ssM0ss/missmoss",
 	"scripts": {
 		"test": "test.js",
-		"build": "npm run clean && run-p build:*"
+    "build": "npm build",
+    "clean": "rm -rf node_modules",
+    "reinstall": "npm run clean && npm install",
+    "rebuild": "npm run clean && npm install && npm run build"
 	},
 	"keywords": [
 		"neocities"
