@@ -1,4 +1,3 @@
-var nunjucks = require('nunjucks');
 function showThing(thingId) {
   var x = thingId;
   document.getElementById(x).style.display = "block";
