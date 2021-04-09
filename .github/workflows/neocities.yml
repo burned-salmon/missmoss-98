@@ -21,8 +21,8 @@ jobs:
 
       - name: install dependencies & build
         run: |
-          sudo npm i
-          sudo npm run build
+          npm i
+          npm run build
 
     # When the dist_dir is ready, deploy it to neocities
       - name: Deploy to neocities
