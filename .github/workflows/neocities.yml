@@ -20,12 +20,7 @@ jobs:
           node-version: 12
 
       - name: install dependencies & build
-        env:
-          API_KEY: ${{ secrets.LASTFM_KEY }}
-          USERNAME: ${{ secrets.LASTFM_USER }}
         run: |
-          sed -i "s/process\.env\.LASTFM_KEY/\"$API_KEY\"/" src/_data/lastfm.js
-          sed -i "s/process\.env\.LASTFM_USER/\"$USERNAME\"/" src/_data/lastfm.js
           npm i
           npm run build
 
@@ -34,5 +29,5 @@ jobs:
         uses: bcomnes/deploy-to-neocities@v1
         with:
           api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-          cleanup: false
+          cleanup: true
           dist_dir: public
