@@ -1,0 +1,57 @@
+body {
+  background-image: url("/backgrounds/bg_starsOnPurple.png");
+  background-color: black;
+}
+
+header, footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+header {
+  height: fit-content;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+footer {
+  height: fit-content;
+}
+
+ul {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+main {
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.middle {
+  border: none;
+  height: 100%;
+  width: 60%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.left, .right {
+  width: 20%;
+  padding: 20px;
+}
+
+.sidebarframe {
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+.sortable {
+    border-spacing: 10px;
+    border-collapse: separate;
+}

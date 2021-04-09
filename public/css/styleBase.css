@@ -1,0 +1,74 @@
+/*
+:root {
+  cursor: url(/cursors/moon.png), auto;
+}
+*/
+
+body,
+html {
+  height: 100%;
+}
+button:hover {
+  cursor: pointer;
+}
+
+section {
+  /*
+  display: none;
+  */
+  display: block;
+}
+section:target {
+  display: block;
+}
+
+section#home {
+  display: block;
+}
+
+.center {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inline {
+  display: inline;
+}
+.flip {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.space-around {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+@keyframes marquee-rtl {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+.marquee-rtl {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.marquee-rtl span {
+  display: inline-block;
+  width: max-content;
+
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  will-change: transform;
+  animation: marquee-rtl 15s linear infinite;
+}
+
+.marquee-rtl span:hover {
+  animation-play-state: paused
+}

@@ -1,0 +1,8 @@
+---
+layout: base.njk
+---
+{% import "window.njk" as macroWindow %}
+
+{{ macroWindow.windowTop("file.txt", "home") }}
+{{ content | safe }}
+{{ macroWindow.windowBottom() }}

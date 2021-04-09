@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include "_meta.njk" %}
+    {% include "_styles.njk" %}
+    {% include "_scripts.njk" %}
+    <script src="/js/cursors/springyEmojiCursor.js"></script>
+  </head>
+  <body>
+    <script>
+      createCursor();
+    </script>
+    <header>{% include "_header.njk" %}</header>
+    <main>
+      <div class="left">
+        {% include "_left.njk" %}
+      </div>
+      <div class="middle">
+        {% block main %}
+          {{ content | safe }}
+        {% endblock %}
+      </div>
+      <div class="right">
+        {% include "_right.njk" %}
+      </div>
+    </main>
+    <footer>{% include "_footer.njk" %}</footer>
+  </body>

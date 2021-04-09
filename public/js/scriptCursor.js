@@ -1,5 +1,5 @@
 function loadCursor() {
-  document.write("<script src=\"/scripts/cursors/springyEmojiCursor.js\"></script>");
+  document.write("<script src=\"/js/cursors/springyEmojiCursor.js\"></script>");
 }
 function createCursor() {
   new springyEmojiCursor({emoji: "🐟"});

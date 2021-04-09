@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Webgardens Homepage</title>
+  <!-- The description is not directly visible on the page. But it can show up in certain places like search engines. Probably unnecessary for most pages in your blog. -->
+  <meta name="description" content="Webgardens is a fun way to see new content from your favorite websites." />
+  <!-- This specifies the favicon (little icon on the browser tab) -->
+  <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+  <!-- This helps our site look consistent across devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <!-- Here's the link to our CSS stylesheet! -->
+  <link href="./style/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">This site requires JavaScript!</div>
+    <div id="content">
+
+      <h1>Greenhouse Pot Generators</h1>
+
+      <h3>This version only works if the person you want to add is using Neocities and has their plants page located at theirusername.neocities.org/webgarden.html</h3>
+      Neocities username: <input type="text" id="ncUser" value="missmoss">
+      <button onclick="createCode1()">Make the code!</button>
+      <br><br>
+      <code style="display:none;" id="unhideDiv1">
+        &lt;iframe src=&quot;https://<span id="ncUser1"></span>.neocities.org/webgarden.html&quot; height=&quot;250px&quot; width=&quot;250px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+      </code>
+      <script>
+        function createCode1() {
+          var x = document.getElementById("ncUser").value;
+          document.getElementById("ncUser1").innerHTML = x;
+          document.getElementById("unhideDiv1").style.display = "";
+        }
+      </script><br>
+
+      <h3>This version should be used if the person is hosting their plants anywhere else.</h3>
+      User's plant page link: <input type="text" id="userLink" value="https://missmoss.neocities.org/webgarden.html">
+      <button onclick="createCode2()">Make the code!</button>
+      <br><br>
+      <code style="display:none;" id="unhideDiv2">
+        &lt;iframe src=&quot;<span id="userLink1"></span>&quot; height=&quot;250px&quot; width=&quot;250px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+      </code>
+      <script>
+        function createCode2() {
+          var x = document.getElementById("userLink").value;
+          document.getElementById("userLink1").innerHTML = x;
+          document.getElementById("unhideDiv2").style.display = "";
+        }
+      </script><br>
+
+    </div>
+    <!-- end of div id="content" -->
+    <div id="footer"></div>
+  </div>
+  <!-- end of div id="container" -->
+  <!-- Here's the link to our JavaScript! -->
+  <script src="./script.js"></script>
+</body>
+
+</html>

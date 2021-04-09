@@ -1,0 +1,37 @@
+{% macro window(title, id, content) %}
+  <section id="{{ id }}">
+    <div class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">{{ title }}</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeThing('{{ id }}');"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close" onclick="hideThing('{{ id }}');"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        {{ content | safe }}
+      </div>
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro windowTop(title, id) %}
+  <section id="{{ id }}">
+    <div class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">{{ title }}</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeThing('{{ id }}');"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close" onclick="hideThing('{{ id }}');"></button>
+        </div>
+      </div>
+      <div class="window-body">
+      {% endmacro %}
+
+      {% macro windowBottom() %}
+      </div>
+    </div>
+  </section>
+{% endmacro %}

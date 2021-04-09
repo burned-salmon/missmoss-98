@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+{% import "window.njk" as macroWindow %}
+
+{{ macroWindow.window("yeet.deet","home","
+<h1>I AM BIG HI!!!! uwu please work</h1>
+<p>owo? whats this???</p>
+") }}
+
+{% for item in indexWindows %}
+{{ macroWindow.window(item.name, item.id, item.windowcontent) }}
+{% endfor %}
