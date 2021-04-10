@@ -1,4 +1,5 @@
 module.exports = function(eleventyConfig) {
+    /*
   eleventyConfig.setTemplateFormats([
     "html",
     "njk",
@@ -8,7 +9,7 @@ module.exports = function(eleventyConfig) {
     "woff",
     "woff2"
   ]);
-  /*
+    */
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addPassthroughCopy("./src/js");
@@ -18,7 +19,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addWatchTarget("./src/fonts/");
   return {
-  */
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',

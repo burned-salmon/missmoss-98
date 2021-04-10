@@ -31,7 +31,7 @@ body {
 .videobox {
 	text-align: center;
 	border: none;
-	background-image: url("https://missmoss.neocities.org/shrines/90sTVresizeUncentered.png");
+	background-image: url("/img/90sTVresizeUncentered.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	padding-top: 99px;
@@ -44,9 +44,6 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
-
-
 .serif {
   font-family: serif;
 }
