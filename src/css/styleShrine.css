@@ -11,7 +11,7 @@ body {
 }
 .collapsible {
   margin: 0 auto;
-	margin-bottom: 5px;
+	margin-top: 5px;
 	cursor: pointer;
 	padding: 18px;
 	width: 100%;
@@ -19,6 +19,7 @@ body {
 	outline: none;
 }
 .content {
+	background: dimgray;
   margin-top: -5px;
   margin-bottom: 5px;
 	padding: 0 18px;
