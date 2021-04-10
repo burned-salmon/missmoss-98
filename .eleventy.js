@@ -1,14 +1,24 @@
 module.exports = function(eleventyConfig) {
+  eleventyConfig.setTemplateFormats([
+    "html",
+    "njk",
+    "css",
+    "png",
+    "gif",
+    "woff",
+    "woff2"
+  ]);
+  /*
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addWatchTarget("./src/js/");
   eleventyConfig.addPassthroughCopy("./src/img");
   eleventyConfig.addWatchTarget("./src/img/");
+  eleventyConfig.addPassthroughCopy("./src/fonts");
+  eleventyConfig.addWatchTarget("./src/fonts/");
   return {
-    /*
-    passthroughFileCopy: true,
-    */
+  */
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
