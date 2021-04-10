@@ -1,28 +1,34 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    {% include "_meta.njk" %}
-    {% include "_styles.njk" %}
-    {% include "_scripts.njk" %}
-    <script src="/js/cursors/springyEmojiCursor.js"></script>
-  </head>
-  <body>
-    <script>
-      createCursor();
-    </script>
-    <header>{% include "_header.njk" %}</header>
-    <main>
-      <div class="left">
+
+<head>
+  {% include "_meta.njk" %}
+  {% include "_styles.njk" %}
+  {% include "_scripts.njk" %}
+  <script src="/js/cursors/springyEmojiCursor.js"></script>
+</head>
+
+<body>
+  <script>
+    createCursor();
+  </script>
+  <header>{% include "_header.njk" %}</header>
+  <main>
+    <div class="left">
+      <div class="sidebar">
         {% include "_left.njk" %}
       </div>
-      <div class="middle">
-        {% block main %}
-          {{ content | safe }}
-        {% endblock %}
-      </div>
-      <div class="right">
+    </div>
+    <div class="middle">
+      {% block main %}
+      {{ content | safe }}
+      {% endblock %}
+    </div>
+    <div class="right">
+      <div class="sidebar">
         {% include "_right.njk" %}
       </div>
-    </main>
-    <footer>{% include "_footer.njk" %}</footer>
-  </body>
+    </div>
+  </main>
+  <footer>{% include "_footer.njk" %}</footer>
+</body>

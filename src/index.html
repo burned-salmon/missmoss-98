@@ -8,6 +8,7 @@ layout: base.njk
 <p>owo? whats this???</p>
 ") }}
 
-{% for item in indexWindows %}
+{% for item in windowsIndex %}
+<br>
 {{ macroWindow.window(item.name, item.id, item.windowcontent) }}
 {% endfor %}
