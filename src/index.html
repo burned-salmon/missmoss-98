@@ -4,11 +4,18 @@ layout: base.njk
 {% import "window.njk" as macroWindow %}
 
 {{ macroWindow.windowTop("index.html", "home") }}
-<h1>I AM BIG HI!!!! uwu please work heyy</h1>
-<p>owo? whats this???</p>
+
+<h3>Welcome to the <i>mossy site</i></h3>
+<p>A lot of stuff is probably broken because I recently migrated my ENTIRE site to 11ty and Github and all that. Sorry!</p>
+
+{% for update in indexUpdates %}
+<p><b>[<time datetime="{{ update.date }}">{{ update.date }}</time>]</b>
+{{ update.content }}</p>
+{% endfor %}
+
 {{ macroWindow.windowBottom() }}
 
-{% for item in windowsIndex %}
+{% for item in indexWindows %}
 <br>
 {{ macroWindow.window(item.name, item.id, item.windowcontent) }}
 {% endfor %}

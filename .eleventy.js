@@ -10,6 +10,7 @@ module.exports = function(eleventyConfig) {
     "woff2"
   ]);
     */
+  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addPassthroughCopy("./src/js");
