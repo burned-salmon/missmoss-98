@@ -3,10 +3,10 @@ layout: base.njk
 ---
 {% import "window.njk" as macroWindow %}
 
-{{ macroWindow.window("yeet.deet","home","
-<h1>I AM BIG HI!!!! uwu please work</h1>
+{{ macroWindow.windowTop("index.html", "home") }}
+<h1>I AM BIG HI!!!! uwu please work heyy</h1>
 <p>owo? whats this???</p>
-") }}
+{{ macroWindow.windowBottom() }}
 
 {% for item in windowsIndex %}
 <br>

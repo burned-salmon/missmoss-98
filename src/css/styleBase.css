@@ -13,16 +13,9 @@ button:hover {
 }
 
 section {
-  /*
   display: none;
-  */
-  display: block;
 }
-section:target {
-  display: block;
-}
-
-section#home {
+section:target, section#home, section#left, section#right {
   display: block;
 }
 
