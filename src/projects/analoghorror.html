@@ -1,4 +1,7 @@
 ---
+title: Analog Horror
+tags:
+  - project
 layout: shrine.njk
 ---
 <style>
@@ -49,22 +52,19 @@ layout: shrine.njk
   <p>The videos in each series are listed by the most recent one first.</p>
 </div>
 
+{% for series in ahSeries %}
 <br>
 
 <div class="box">
-  <h1>Analog Archives</h1>
-  <img src="/img/logos/logo_AA.png" class="logo">
-  <h3>In progress: No</h3>
-  <h3>Activity Level: N/A</h3>
-  <h3>Most recent activity: <time datetime="2020-07-12">Jul 12, 2020</time></h3>
-  <h3>First activity: <time datetime="2019-06-05">Jun 5, 2019</time></h3>
-  <h3>Total video count: 9</h3>
-  <p>I'm pretty sure this series is complete. I've gotten some good profile pictures from it. I still think it's weird that the first three videos were all uploaded on the same day, only for the next one to come out a few weeks after.</p>
-  <p><u> Named Locations: </u></p>
-  <dl>
-    <dt></dt>
-    <dd></dd>
-  </dl>
+  <h1>{{ series.name }}</h1>
+  <img src="/img/logos/logo_{{ series.acronym }}.png" class="logo">
+  <h3>In progress: {{ series.inProgress }}</h3>
+  <h3>Activity Level: {{ series.activityLevel }}</h3>
+  <h3>Most recent activity: <time datetime="{{ series.mostRecentActivity }}">{{ series.mostRecentActivity }}</time></h3>
+  <h3>First activity: <time datetime="{{ series.firstActivity }}">{{ series.firstActivity }}</time></h3>
+  <h3>Total video count: {{ series.totalVideoCount }}</h3>
+  <p>{{ series.notes }}</p>
+  <p>{{ series.theory }}</p>
   <button class="collapsible" type="button"><strong>Analog Archives - Amber Alert</strong><br><time datetime="2019-06-05">Jun 5, 2019</time></button>
   <div class="content"><br />
     <div class="videobox"><iframe class="television" src="https://www.youtube-nocookie.com/embed/a1jzNiHNCnk" width="560" height="315">
@@ -97,6 +97,7 @@ layout: shrine.njk
     </details>
   </div>
 </div>
+{% endfor %}
 
 <br>
 

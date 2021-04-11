@@ -19,6 +19,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/img/");
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addWatchTarget("./src/fonts/");
+  eleventyConfig.addPassthroughCopy("./src/projects/analoghorror");
+  eleventyConfig.addWatchTarget("./src/projects/analoghorror/");
   return {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
