@@ -1,0 +1,14 @@
+<button class="collapsible" type="button">
+  <strong>{{ title }}</strong><br>
+  <time datetime="{{ datetime }}">{{ datetime }}</time>
+</button>
+<div class="content"><br/>
+  <div class="videobox">
+    <iframe class="television" src="https://www.youtube-nocookie.com/embed/{{ youtube }}" width="560" height="315"></iframe>
+  </div>
+  <br/>
+  <details>
+    <summary>Click once you've watched the video!</summary>
+    {{ content | safe }}
+  </details>
+</div>

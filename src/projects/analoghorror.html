@@ -1,7 +1,7 @@
 ---
 title: Analog Horror
 tags:
-  - project
+- project
 layout: shrine.njk
 ---
 <style>
@@ -15,7 +15,8 @@ layout: shrine.njk
     border: none;
   }
 
-  summary, details {
+  summary,
+  details {
     margin-bottom: 10px;
   }
 
@@ -50,7 +51,9 @@ layout: shrine.njk
   <p>This page is more than just a shrine, this is my deep dive into every episode of some of my favorite analog horror series!</p>
   <p>Please note that <strong>this page will contain spoilers for every listed series</strong>, but almost all of it is hidden in the collapsible boxes. There, I take a deep dive into the contents of each episode/tape/recording.</p>
   <p>The videos in each series are listed by the most recent one first.</p>
+  <p>HEY SAM IF UR READING THIS YOU'RE GONNA ITERATE THROUGH COLLECTIONS TO MAKE THE EPISODE COUNTER THING WORK</p>
 </div>
+
 
 {% for series in ahSeries %}
 <br>
@@ -65,39 +68,36 @@ layout: shrine.njk
   <h3>Total video count: {{ series.totalVideoCount }}</h3>
   <p>{{ series.notes }}</p>
   <p>{{ series.theory }}</p>
-  <button class="collapsible" type="button"><strong>Analog Archives - Amber Alert</strong><br><time datetime="2019-06-05">Jun 5, 2019</time></button>
-  <div class="content"><br />
-    <div class="videobox"><iframe class="television" src="https://www.youtube-nocookie.com/embed/a1jzNiHNCnk" width="560" height="315">
-      </iframe></div>
-    <br />
+
+  {%- for episode in collections.episode -%}
+  {% if episode.data.series == series.acronym %}
+  <button class="collapsible" type="button">
+    <strong>{{ episode.data.title }}</strong><br>
+    <time datetime="{{ datetime }}">{{ episode.data.datetime }}</time>
+  </button>
+  <div class="content"><br/>
+    <div class="videobox">
+      <iframe class="television" src="https://www.youtube-nocookie.com/embed/{{ episode.data.youtube }}" width="560" height="315"></iframe>
+    </div>
+    <br/>
     <details>
       <summary>Click once you've watched the video!</summary>
-      <p></p>
+      {{ episode.templateContent | safe }}
     </details>
   </div>
-  <button class="collapsible" type="button"><strong>Analog Archives - Safety & Information</strong><br><time datetime="2019-06-05">Jun 5, 2019</time></button>
-  <div class="content"><br />
-    <div class="videobox"><iframe class="television" src="https://www.youtube-nocookie.com/embed/hoJoW1Z0WV0" width="560" height="315">
-      </iframe></div>
-    <br />
-    <details>
-      <summary>Click once you've watched the video!</summary>
-      <p>A tape by Sunset Studios, that is apparently required by federal law to be shown to all new television owners. It teaches the viewer how television signals work, and how they can be hijacked at the transmitter by nefarious individuals. The
-        animated demonstration of what these hijacked signals do to your television shows its static becoming bright red and periodically displaying "I CAN SEE", "STARE", and "MEDIA". The user is instructed to immediately turn off their TV if it
-        starts to display disturbing content.</p>
-      <p>Next, the tape mentions that broadcasts can be intercepted not just between the station and the transmitter, but between the transmitter and the home. It states that the method used to do so is unknown. Once again, the user is urgently
-        instructed to turn off their television if it displays "flashing colors or otherwise abnormal imagery" and that it will turn itself back on after the interruption is over.</p>
-      <p>A burst of static briefly interrupts the tape, showing an alternate version of the hijacked signal demonstration, with instruction text that simply says "<span class="spectral">blood red</span> or other unseeable colors. Do not look." The
-        messages on the television say "IT'S IN ME" and "MY BRAIN". There's a third message, but the video is so distorted I couldn't read it. The next slide says that viewing the television during an interruption can cause headaches (makes sense),
-        seizures (what?), nausea (fair enough), hemorrhages (?!), and suicidal thoughts or actions (!!!). A notice says that interruptions do warrant emergency warning broadcasts.</p>
-      <p>The next slides talk about the potential dangers of normal TV usage, such as eye damage from looking at it for too long. There is then what I assume to be a part of the video that has been cut and replaced by static, followed by the phrase
-        "<i>If encountered, it will cause intense psychological harm.</i>" This "it" is assumed to refer to something in the portion of the video covered by static. The viewer is warned that "Viewing unauthorized content is dangerous." "Exposure can
-        be <i><span class="spectral">fatal.</span></i>" We see a diagram of the human brain and eye turn red and begin to drip blood. "<i>Avoid it at all costs. Report any anomalous sightings to your local police department. Forget what you saw.</i>"
-      </p>
-    </details>
-  </div>
+  {% endif %}
+  {%- endfor -%}
+
 </div>
 {% endfor %}
+
+
+
+
+
+
+
+
 
 <br>
 
