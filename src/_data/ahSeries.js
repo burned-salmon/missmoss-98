@@ -19,5 +19,16 @@ module.exports = [{
     totalVideoCount: "2",
     notes: "It seems like they release new tapes every few months, and we're due for another one soon. For now, there isn't much to go on, so I won't make a theory just yet.",
     theory: "No theory yet."
+  },
+  {
+    name: "Surreal Broadcast",
+    acronym: "SB",
+    inProgress: "Yes",
+    activityLevel: "Every 2-4 weeks",
+    mostRecentActivity: "2021-04-09",
+    firstActivity: "2020-07-29",
+    totalVideoCount: "14",
+    notes: "A very active analog horror series. This one is my current favorite, due to its length, high activity level, and consistent quality improvement. So far, I've covered all of Season 1.",
+    theory: "No theory yet."
   }
 ];
