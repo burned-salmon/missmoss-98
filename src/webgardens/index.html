@@ -1,37 +1,22 @@
-<!DOCTYPE html>
-<html>
+---
+title: Webgardens
+layout: baseWindow.njk
+tags:
+- webgardens
+- projects
+---
+<h4>Welcome to Webgardens!</h4>
 
-<head>
-  <title>Webgardens Homepage</title>
-  <meta name="description" content="Webgardens is a fun way to see new content from your favorite websites." />
-  <!-- This specifies the favicon (little icon on the browser tab) -->
-  <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
-  <!-- This helps our site look consistent across devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="UTF-8" />
-  <!-- Here's the link to our CSS stylesheet! -->
-  <link href="./style/style.css" rel="stylesheet" type="text/css" media="all" />
-</head>
+<p>
+  Webgardens is a fun way to see new content from your favorite
+  websites.
+</p>
 
-<body>
-  <div id="container">
-    <div id="header">This site requires JavaScript!</div>
-    <div id="content">
-      <h1>Welcome to Webgardens!</h1>
-
-      <p>
-        Webgardens is a fun way to see new content from your favorite
-        websites.
-      </p>
-
-      <div id="recentpostlistdiv"></div>
-    </div>
-    <!-- end of div id="content" -->
-    <div id="footer"></div>
-  </div>
-  <!-- end of div id="container" -->
-  <!-- Here's the link to our JavaScript! -->
-  <script src="./script.js"></script>
-</body>
-
-</html>
+<h4>The Nursery</h4>
+<h3>Featuring everyone using Webgardens!</h3>
+<p>Please let me know on Discord if your pot isn't here and you want it here, or if your pot is here and you don't want it here.</p>
+<div class="space-around">
+  {% for pot in wgNursery %}
+  <iframe src="{{ pot.link }}" height="250px" width="250px" scrolling="no"></iframe>
+  {% endfor %}
+</div>

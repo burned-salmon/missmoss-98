@@ -6,31 +6,45 @@
   <nav>
     <p>Pages</p>
     <div class="buttons">
-      <a href="/" target="_top">
-        <button>Home</button>
-      </a>
-      <a href="/shrines" target="_top">
-        <button>Shrines</button>
-      </a>
+      {% for page in collections.pages %}
+        <a href="{{ page.url }}">
+          <button>{{ page.data.title }}</button>
+        </a>
+      {% endfor %}
+
       <a href="/#feedback" target="_top">
         <button>Feedback</button>
       </a>
       <button disabled="disabled">Real Feedback</button>
     </div>
+
     <hr>
+
     <p>Projects</p>
     <div class="buttons">
-      <a href="/webgardens" target="_top">
-        <button>Webgardens</button>
-      </a>
-      <a href="/games/monstermachine" target="_top">
-        <button>The Monster Machine</button>
-      </a>
+      {% for project in collections.projects %}
+        <a href="{{ project.url }}">
+          <button>{{ project.data.title }}</button>
+        </a>
+      {% endfor %}
       <a href="https://codepen.io/missmoss/pen/VwPKpXm" target="_top">
         <button>shelves.css</button>
       </a>
     </div>
+
     <hr>
+
+    <p>Games</p>
+    <div class="buttons">
+      {% for game in collections.games %}
+        <a href="{{ game.url }}">
+          <button>{{ game.data.title }}</button>
+        </a>
+      {% endfor %}
+    </div>
+
+    <hr>
+
   </nav>
   <p>hey! add my button!</p>
   <a href="https://missmoss.neocities.org" target="_top"><img src="https://i.imgur.com/Sv96gpg.png"/>

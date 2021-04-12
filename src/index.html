@@ -1,5 +1,8 @@
 ---
+title: Home
 layout: base.njk
+tags:
+- pages
 ---
 {% import "window.njk" as macroWindow %}
 
@@ -8,9 +11,14 @@ layout: base.njk
 <h3>Welcome to the <i>mossy site</i></h3>
 <p>A lot of stuff is probably broken because I recently migrated my ENTIRE site to 11ty and Github and all that. Sorry!</p>
 
+{% for image in collections.stamps %}
+<img src="{{image}}" alt="">
+{% endfor %}
+
 {% for update in indexUpdates %}
 <p><b>[<time datetime="{{ update.date }}">{{ update.date }}</time>]</b>
-{{ update.content }}</p>
+  {{ update.content }}
+</p>
 {% endfor %}
 
 {{ macroWindow.windowBottom() }}
