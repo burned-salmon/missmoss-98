@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+{% import "window.njk" as macroWindow %}
+
+{{ macroWindow.windowTop("file.txt", "home") }}
+
+<nav>
+  {% for page in collections.webgardens %}
+    <a href="{{ page.url }}">
+      <button>{{ page.data.title }}</button>
+    </a>
+  {% endfor %}
+</nav>
+
+{{ content | safe }}
+
+{{ macroWindow.windowBottom() }}

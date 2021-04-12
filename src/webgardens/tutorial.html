@@ -1,68 +1,51 @@
-<!DOCTYPE html>
-<html>
+---
+title: Tutorial
+date: 0000-01-02
+layout: webgardens.njk
+tags:
+- webgardens
+---
 
-<head>
-  <title>Tutorial</title>
-  <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="UTF-8" />
-  <link href="./style/style.css" rel="stylesheet" type="text/css" media="all" />
-</head>
-
-<body>
-  <div id="container">
-    <div id="header">...</div>
-    <div id="content">
-
-      <h1>
-        Webgardens Tutorial
-      </h1>
-      <h3>
-        So, how does this work?
-      </h3>
-      <h5>
-        To create your greenhouse:
-      </h5>
-      <ol>
-        <li>A <b>greenhouse</b> is a page on your site to add your pots. A <b>pot</b> is a 250x250 pixel box that contains a sliver of someone else's website.</li>
-        <li>Now you have two options, depending on who you want to add to your greenhouse:</li>
-        <ol>
-          <li>Go to <a href="./generator.html">the greenhouse generator</a> and type in the user's Neocities username. If they are hosting their plant in the way detailed below, the generator will create the code to add their pot to your website.
-          </li>
-          <li>Copy the code below for each pot you want to create. Replace the <code>"PUT A SITE'S POSTS PAGE LINK HERE!"</code> with the link in question.</li>
-        </ol>
-      </ol>
-      <center>
-        <textarea rows="4" cols="80">
+<h1>
+  Webgardens Tutorial
+</h1>
+<h3>
+  So, how does this work?
+</h3>
+<h5>
+  To create your greenhouse:
+</h5>
+<ol>
+  <li>A <b>greenhouse</b> is a page on your site to add your pots. A <b>pot</b> is a 250x250 pixel box that contains a sliver of someone else's website.</li>
+  <li>Now you have two options, depending on who you want to add to your greenhouse:</li>
+  <ol>
+    <li>Go to <a href="./generator.html">the greenhouse generator</a> and type in the user's Neocities username. If they are hosting their plant in the way detailed below, the generator will create the code to add their pot to your website.
+    </li>
+    <li>Copy the code below for each pot you want to create. Replace the <code>"PUT A SITE'S POSTS PAGE LINK HERE!"</code> with the link in question.</li>
+  </ol>
+</ol>
+<center>
+  <textarea rows="4" cols="80">
 <iframe src="PUT A SITE'S POSTS PAGE LINK HERE!" height="250px" width="250px" scrolling="no"></iframe>
         </textarea>
-      </center>
-      <p>
-        Note: you're free to use CSS to change how your pots look! Just make sure you don't change the height or width to be anything other than 250 pixels, since that messes up the formatting.
-      </p>
+</center>
+<p>
+  Note: you're free to use CSS to change how your pots look! Just make sure you don't change the height or width to be anything other than 250 pixels, since that messes up the formatting.
+</p>
 
-      <h5>
-        To create your posts page:
-      </h5>
-      <ol>
-        <li>Create an HTML page on your site to add your plants. A <b>plant</b> is the actual content of a pot. Please prioritize naming it <code><b>webgarden.html</b></code> so that the code generator works, but you don't need to.</li>
-        <li>Copy the HTML from <a href="./exampleposts.txt">here</a>, which has some plant examples to get you started, into your new page.</li>
-        <li>Note that your plants have many restrictions as you edit them:
-          <ul>
-            <li>The &lt;div class="plant"&gt; div <b>SHOULD be the only content on this page.</b> To allow the pots to be HTML5 compatible, the scrolling="no" can be removed. We don't want ugly scroll bars in our greenhouses.</li>
-            <li>Other than that, feel free to use almost anything! Because Webgardens is powered by iframes, any HTML and CSS you use will be visible.</li>
-            <li><b>Links in your post MUST be set to open in a new tab or the "parent" tab by default!</b> This is because, if you don't, links will open inside the iframe by default. You can achieve the desired behavior by changing your opening
-              <code>&lt;a href=&quot;linkhere&quot;&gt;</code> into <code>&lt;a href=&quot;linkhere&quot; <b>target=&quot;_blank&quot;</b>&gt;</code> or <code>&lt;a href=&quot;linkhere&quot; <b>target=&quot;_top&quot;</b>&gt;</code>.</li>
-          </ul>
-        </li>
-      </ol>
-
-    </div>
-    <!-- end of div id="content" -->
-    <div id="footer"></div>
-  </div>
-  <!-- end of div id="container" -->
-  <script src="./script.js"></script>
-</body>
-
-</html>
+<h5>
+  To create your posts page:
+</h5>
+<ol>
+  <li>Create an HTML page on your site to add your plants. A <b>plant</b> is the actual content of a pot. Please prioritize naming it <code><b>webgarden.html</b></code> so that the code generator works, but you don't need to.</li>
+  <li>Copy the HTML from <a href="./exampleposts.txt">here</a>, which has some plant examples to get you started, into your new page.</li>
+  <li>Note that your plants have many restrictions as you edit them:
+    <ul>
+      <li>The &lt;div class="plant"&gt; div <b>SHOULD be the only content on this page.</b> To allow the pots to be HTML5 compatible, the scrolling="no" can be removed. We don't want ugly scroll bars in our greenhouses.</li>
+      <li>Other than that, feel free to use almost anything! Because Webgardens is powered by iframes, any HTML and CSS you use will be visible.</li>
+      <li><b>Links in your post MUST be set to open in a new tab or the "parent" tab by default!</b> This is because, if you don't, links will open inside the iframe by default. You can achieve the desired behavior by changing your opening
+        <code>&lt;a href=&quot;linkhere&quot;&gt;</code> into <code>&lt;a href=&quot;linkhere&quot; <b>target=&quot;_blank&quot;</b>&gt;</code> or <code>&lt;a href=&quot;linkhere&quot; <b>target=&quot;_top&quot;</b>&gt;</code>.
+      </li>
+    </ul>
+  </li>
+</ol>

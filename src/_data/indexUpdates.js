@@ -1,7 +1,7 @@
 module.exports = [
   {
     date: "2021-04-12",
-    content: "The Analog Horror Documentation Project (henceforth known as AHDP) is now live and better than ever. Also, I fixed my webgarden. If you see any weird broken image links anywhere, I'm working on a way to display every image from a folder. This should help make it easier to display my stamps. As one more update, I'm joining Roxelle's Sticker Game, which you can find the button for in the navigation to the left."
+    content: "The Analog Horror Documentation Project (henceforth known as AHDP) is now live and better than ever. Also, I fixed my webgarden and all the webgarden-related pages. If you see any weird broken image links anywhere, I'm working on a way to display every image from a folder. This should help make it easier to display my stamps. As one more update, I'm joining Roxelle's Sticker Game, which you can find the button for in the navigation to the left."
   },
   {
     date: "2021-04-10",
