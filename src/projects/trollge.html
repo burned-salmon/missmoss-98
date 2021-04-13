@@ -1,5 +1,5 @@
 ---
-title: Analog Horror
+title: Trollge Incidents
 tags:
 - projects
 layout: project.njk
@@ -16,39 +16,18 @@ layout: project.njk
     margin-bottom: 10px;
   }
 
-  .logo {
-    height: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .box {
     background: gray;
     border: 5px solid black;
     width: 875px;
   }
-
-  .children {
-    font-family: Chalkduster, fantasy;
-  }
-
-  .spectral {
-    color: DarkRed;
-  }
 </style>
 
 
 <div class="box">
-  <h1>Analog Horror</h1>
-  <h3>What is analog horror?</h3>
-  <p>Analog horror is a trend started by a YouTube channel called <strong>Local58</strong>, which has gained significant popularity. This sub-genre of "found footage" looks back to the 80's and 90's (and sometimes the early 2000's) to view horrific events that occured and were captured on VHS tapes.</p>
-  <h3>What is this page?</h3>
-  <p>This page used to be a shrine, but now it's a deep dive into every episode of some of my favorite analog horror series!</p>
-  <p>Please note that <strong>this page will contain spoilers for every listed series</strong>, but almost all of it is hidden in the collapsible boxes. There, I take a deep dive into the contents of each episode/tape/recording.</p>
-  <p>The videos in each series are listed by the most recent one first.</p>
+  <h1>THIS PAGE IS UNDER CONSTRUCTION PLEASE IGNORE EVERYTHING IN IT</h1>
+  <h2>I copied stuff from the Analog Horror Project so you know</h2>
 </div>
-
 
 {% for series in ahSeries %}
 <br>
@@ -56,8 +35,6 @@ layout: project.njk
 <div class="box">
   <h1>{{ series.name }}</h1>
   <img src="/img/logos/logo_{{ series.acronym }}.png" class="logo">
-  <h3>In progress: {{ series.inProgress }}</h3>
-  <h3>Activity Level: {{ series.activityLevel }}</h3>
   <h3>Most recent activity: <time datetime="{{ series.mostRecentActivity }}">{{ series.mostRecentActivity }}</time></h3>
   <h3>First activity: <time datetime="{{ series.firstActivity }}">{{ series.firstActivity }}</time></h3>
   <h3>Total video count: {{ series.totalVideoCount }}</h3>
@@ -85,5 +62,3 @@ layout: project.njk
 
 </div>
 {% endfor %}
-
-<script src="/js/scriptCollapse.js"></script>

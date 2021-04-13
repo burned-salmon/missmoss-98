@@ -2,17 +2,15 @@
 const fg = require('fast-glob');
 
 // Run search for images in /gallery and /sponsors
-var stampImages = fg.sync(['**/88x31/*', '!**/public']);
-const stickerImages = fg.sync(['**/stickers/*', '!**/public']);
+const stampImageSrc = fg.sync('**/88x31/*', '!**/public', { objectMode: true });
+//const stickerImages = fg.sync(['**/stickers/*', '!**/public']);
 
-for (image in stampImages) {
+var stampImageNames = [];
+for (image in stampImageSrc) {
 
-  var index = stampImages.indexOf(image);
+  stampImageNames.push(image["name"]);
 
-  if (index !== -1) {
-    var newImage = image.slice(4);
-    stampImages[index] = newImage;
-  }
+    //var newImage = image.slice(4);
 }
 //Create collections so you can access the data in your templates
 module.exports = function(eleventyConfig) {
@@ -39,15 +37,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/projects/analoghorror");
   eleventyConfig.addWatchTarget("./src/projects/analoghorror/");
 
-  //Create collection of gallery images
+  //Create collections of images
   eleventyConfig.addCollection('stamps', function(collection) {
-    return stampImages;
+    return stampImageNames;
   });
 
-  //Create collection of sponsor logos
-  eleventyConfig.addCollection('stickers', function(collection) {
-    return stickerImages;
-  });
+  //eleventyConfig.addCollection('stickers', function(collection) {
+  //  return stickerImages;
+  //});
 
   return {
     htmlTemplateEngine: 'njk',

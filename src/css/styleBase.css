@@ -21,6 +21,10 @@ nav a {
   text-decoration: none;
 }
 
+iframe {
+  border: 0;
+}
+
 /* common styled boxes */
 .notepad {
   background-image: url("/img/backgrounds/np_cakiepadPurple.png");
