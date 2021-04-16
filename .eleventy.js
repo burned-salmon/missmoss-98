@@ -1,17 +1,22 @@
-// Import fast-glob package
+// Import packages and initialize variables
 const fg = require('fast-glob');
+var newVal = "";
 
-// Run search for images in /gallery and /sponsors
-const stampImageSrc = fg.sync(['**/88x31/*', '!**/public'], { objectMode: true });
-//const stickerImages = fg.sync(['**/stickers/*', '!**/public']);
-
-var stampImageNames = [];
-for (image in stampImageSrc) {
-
-  stampImageNames.push(image["name"]);
-
-    //var newImage = image.slice(4);
+// Functions for importing the images
+function prepImageArray(value) {
+  newVal = String(value);
+  newVal = newVal.slice(4);
+  stampImageNames.push(newVal);
 }
+
+// Search for le images
+const stampImageSrc = fg.sync(['**/88x31/*', '!**/public']);
+var stampImageNames = [];
+//const stickerImageSrc = fg.sync(['**/stickers/*', '!**/public']);
+//var stickerImageNames = [];
+
+stampImageSrc.forEach(prepImageArray);
+
 //Create collections so you can access the data in your templates
 module.exports = function(eleventyConfig) {
   /*
@@ -43,7 +48,7 @@ module.exports = function(eleventyConfig) {
   });
 
   //eleventyConfig.addCollection('stickers', function(collection) {
-  //  return stickerImages;
+  //  return stickerImageNames;
   //});
 
   return {
