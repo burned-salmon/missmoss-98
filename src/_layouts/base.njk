@@ -1,36 +1,37 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-  {% include "_meta.njk" %}
-  <link rel="stylesheet" href="/css/styleBase.css"/>
-  <link rel="stylesheet" href="/css/style.css"/>
-  <link rel="stylesheet" href="/css/Neo98.css"/>
-  {% include "_scripts.njk" %}
-  <script src="/js/cursors/springyEmojiCursor.js"></script>
-</head>
+  <head>
+    {% include "_meta.njk" %}
+    <link rel="stylesheet" href="/css/styleBase.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/Neo98.css"/>
+    {% include "_scripts.njk" %}
+    <script src="/js/cursors/springyEmojiCursor.js"></script>
+    <script src="https://yesterwebring.neocities.org/script.js"></script>
+  </head>
 
-<body>
-  <script>
-    createCursor();
-  </script>
-  <header>{% include "_header.njk" %}</header>
-  <main>
-    <div class="left">
-      <div class="sidebar">
-        {% include "_left.njk" %}
+  <body>
+    <script>
+      createCursor();
+    </script>
+    <header>{% include "_header.njk" %}</header>
+    <main>
+      <div class="left">
+        <div class="sidebar">
+          {% include "_left.njk" %}
+        </div>
       </div>
-    </div>
-    <div class="middle">
-      {% block main %}
-      {{ content | safe }}
-      {% endblock %}
-    </div>
-    <div class="right">
-      <div class="sidebar">
-        {% include "_right.njk" %}
+      <div class="middle">
+        {% block main %}
+          {{ content | safe }}
+        {% endblock %}
       </div>
-    </div>
-  </main>
-  <footer>{% include "_footer.njk" %}</footer>
-</body>
+      <div class="right">
+        <div class="sidebar">
+          {% include "_right.njk" %}
+        </div>
+      </div>
+    </main>
+    <footer>{% include "_footer.njk" %}</footer>
+  </body>

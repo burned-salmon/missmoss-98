@@ -1,5 +1,9 @@
 module.exports = [
   {
+    date: "2021-04-16",
+    content: "I've been working on something cool. It's gonna be a little while before it's ready."
+  },
+  {
     date: "2021-04-12",
     content: "The Analog Horror Documentation Project (henceforth known as AHDP) is now live and better than ever. Also, I fixed my webgarden and all the webgarden-related pages. If you see any weird broken image links anywhere, I'm working on a way to display every image from a folder. This should help make it easier to display my stamps. As one more update, I'm joining Roxelle's Sticker Game, which you can find the button for in the navigation to the left."
   },

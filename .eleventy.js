@@ -2,7 +2,7 @@
 const fg = require('fast-glob');
 
 // Run search for images in /gallery and /sponsors
-const stampImageSrc = fg.sync('**/88x31/*', '!**/public', { objectMode: true });
+const stampImageSrc = fg.sync(['**/88x31/*', '!**/public'], { objectMode: true });
 //const stickerImages = fg.sync(['**/stickers/*', '!**/public']);
 
 var stampImageNames = [];
