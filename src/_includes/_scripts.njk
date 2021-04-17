@@ -1,2 +1,12 @@
 <script src="/js/script.js"></script>
 <script src="/js/fakefeedback.js"></script>
+<script>
+  var newVal = "";
+  // This following function isolates the file name and replaces underscores with spaces
+  function createTitle(filename) {
+    newVal = filename.split("/").pop();
+    newVal = newVal.split(".")[0];
+    newVal = newVal.replace(/_/g, ' ');
+    return newVal;
+  }
+</script>

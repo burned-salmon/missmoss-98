@@ -12,15 +12,27 @@ tags:
 <h3>Welcome to the <i>mossy site</i></h3>
 <p>A lot of stuff is probably broken because I recently migrated my ENTIRE site to 11ty and Github and all that. Sorry!</p>
 
-{% for image in collections.stamps %}
-<img src='{{ image }}' alt="">
-{% endfor %}
-
 {% for update in indexUpdates %}
 <p><b>[<time datetime="{{ update.date }}">{{ update.date }}</time>]</b>
   {{ update.content }}
 </p>
 {% endfor %}
+
+{{ macroWindow.windowBottom() }}
+
+<br>
+
+{{ macroWindow.windowTop("stamps.html", "stamps") }}
+<p>Here's my stamp collection! Hover over a stamp to see who made it.</p>
+{% for image in collections.stamps %}
+<img src='{{ image }}' id='{{ image }}' title='This title should be replaced.'>
+{% endfor %}
+
+<script type = "text/javascript">
+  {% for image in collections.stamps %}
+  document.getElementById('{{ image }}').setAttribute("title", createTitle("{{ image }}"));
+  {% endfor %}
+</script>
 
 {{ macroWindow.windowBottom() }}
 

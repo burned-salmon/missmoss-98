@@ -1,21 +1,28 @@
 // Import packages and initialize variables
 const fg = require('fast-glob');
 var newVal = "";
+var newArray = [];
 
 // Functions for importing the images
 function prepImageArray(value) {
   newVal = String(value);
   newVal = newVal.slice(4);
-  stampImageNames.push(newVal);
+  newArray.push(newVal);
 }
 
-// Search for le images
-const stampImageSrc = fg.sync(['**/88x31/*', '!**/public']);
-var stampImageNames = [];
-//const stickerImageSrc = fg.sync(['**/stickers/*', '!**/public']);
-//var stickerImageNames = [];
-
+// Stamps
+const stampImageSrc = fg.sync(['**/99x56/*', '!**/public']);
+var stampFilePaths = [];
 stampImageSrc.forEach(prepImageArray);
+stampFilePaths = newArray;
+newArray = [];
+
+// Stickers
+const stickerImageSrc = fg.sync(['**/stickers/*', '!**/public']);
+var stickerFilePaths = [];
+stickerImageSrc.forEach(prepImageArray);
+stickerFilePaths = newArray;
+newArray = [];
 
 //Create collections so you can access the data in your templates
 module.exports = function(eleventyConfig) {
@@ -44,12 +51,13 @@ module.exports = function(eleventyConfig) {
 
   //Create collections of images
   eleventyConfig.addCollection('stamps', function(collection) {
-    return stampImageNames;
+    return stampFilePaths;
   });
 
-  //eleventyConfig.addCollection('stickers', function(collection) {
-  //  return stickerImageNames;
-  //});
+
+  eleventyConfig.addCollection('stickers', function(collection) {
+    return stickerFilePaths;
+  });
 
   return {
     htmlTemplateEngine: 'njk',
