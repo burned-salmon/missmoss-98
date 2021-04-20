@@ -36,6 +36,7 @@
   </section>
 {% endmacro %}
 
+{#
 {% macro collectionImages(collectionName) %}
   {% for image in collections.'{{ collectionName }}' %}
     <img src='{{ image }}' id='{{ image }}' title='This title should be replaced.'>
@@ -45,5 +46,14 @@
     {% for image in collections.{{ collectionName }} %}
       document.getElementById('{{ image }}').setAttribute("title", createTitle("{{ image }}"));
     {% endfor %}
+  </script>
+{% endmacro %}
+#}
+
+{% macro collectionImages(imageName) %}
+    <img src='{{ imageName }}' id='{{ imageName }}' title='This title should be replaced.'>
+
+  <script type="text/javascript">
+      document.getElementById('{{ imageName }}').setAttribute("title", createTitle("{{ imageName }}"));
   </script>
 {% endmacro %}

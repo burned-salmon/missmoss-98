@@ -15,6 +15,7 @@ themessage[5]="let's go to five guys for dinner!"
 themessage[6]="mwah! mwah! boops for you!"
 themessage[7]="moss i love this feedback box"
 themessage[8]="have you heard that your css skills are off the charts?"
+themessage[9]="even stupid feedback is good"
 x=Math.floor(Math.random()*themessage.length)
 function changer(){
 if(counter>=themessage[x].length){return false}
