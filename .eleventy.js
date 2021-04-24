@@ -24,6 +24,13 @@ stickerImageSrc.forEach(prepImageArray);
 stickerFilePaths = newArray;
 newArray = [];
 
+// internetbumperstickers.com
+const bumperImageSrc = fg.sync(['**/250x40/*', '!**/public']);
+var bumperFilePaths = [];
+bumperImageSrc.forEach(prepImageArray);
+bumperFilePaths = newArray;
+newArray = [];
+
 //Create collections so you can access the data in your templates
 module.exports = function(eleventyConfig) {
   /*
@@ -54,9 +61,12 @@ module.exports = function(eleventyConfig) {
     return stampFilePaths;
   });
 
-
   eleventyConfig.addCollection('stickers', function(collection) {
     return stickerFilePaths;
+  });
+
+  eleventyConfig.addCollection('bumperstickers', function(collection) {
+    return bumperFilePaths;
   });
 
   return {
