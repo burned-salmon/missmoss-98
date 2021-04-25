@@ -1,8 +1,6 @@
 ---
 layout: base.njk
 ---
-{% import "window.njk" as macroWindow %}
-
-{{ macroWindow.windowTop("{% block fakefilename %}file.txt{% endblock %}", "home") }}
+{% window "page.html", "home" %}
 {{ content | safe }}
-{{ macroWindow.windowBottom() }}
+{% endwindow %}

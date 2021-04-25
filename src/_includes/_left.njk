@@ -1,6 +1,5 @@
-{% import "window.njk" as macroWindow %}
-
-{{ macroWindow.windowTop("left.html", "left") }}
+{% window "left.html",
+"left" %}
 
 <div class="center">
   <nav>
@@ -12,22 +11,16 @@
         </a>
       {% endfor %}
 
+      <a href="/#webcollections" target="_top">
+        <button>Web Collections</button>
+      </a>
+      <a href="/#toybox" target="_top">
+        <button>Toybox</button>
+      </a>
       <a href="/#feedback" target="_top">
         <button>Feedback</button>
       </a>
       <button disabled="disabled">Real Feedback</button>
-    </div>
-
-    <hr>
-
-    <p>Collections</p>
-    <div class="buttons">
-      <a href="/#stamps" target="_top">
-        <button>My Stamps</button>
-      </a>
-      <a href="/#bumperstickers" target="_top">
-        <button>Bumper Stickers</button>
-      </a>
     </div>
 
     <hr>
@@ -66,4 +59,4 @@
     <a href="https://keysklubhouse.neocities.org" target="_top">Key</a>
     for making it!</p>
 
-  {{ macroWindow.windowBottom() }}
+  {% endwindow %}

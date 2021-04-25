@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% include "_meta.njk" %}
+  <link rel="stylesheet" href="/css/defaults.css"/>
+  <link rel="stylesheet" href="/css/styleBase.css"/>
+  <link rel="stylesheet" href="/css/styleShrine.css"/>
+  {% include "_scripts.njk" %}
+</head>
+
+<body>
+  <main>
+    {% block main %}
+    {{ content | safe }}
+    {% endblock %}
+  </main>
+</body>

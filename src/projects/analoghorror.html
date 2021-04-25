@@ -2,7 +2,7 @@
 title: Analog Horror
 tags:
 - projects
-layout: project.njk
+layout: blank.njk
 permalink: "/analoghorror/"
 ---
 <style>
@@ -25,6 +25,8 @@ permalink: "/analoghorror/"
   }
 
   .box {
+    margin-top: 5px;
+    margin-bottom: 5px;
     background: gray;
     border: 5px solid black;
     width: 875px;
@@ -52,7 +54,6 @@ permalink: "/analoghorror/"
 
 
 {% for series in ahSeries %}
-<br>
 
 <div class="box">
   <h1>{{ series.name }}</h1>

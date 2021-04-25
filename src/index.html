@@ -5,9 +5,7 @@ layout: base.njk
 tags:
 - pages
 ---
-{% import "window.njk" as macroWindow %}
-
-{{ macroWindow.windowTop("index.html", "home") }}
+{% window "index.html", "home" %}
 
 <h3>Welcome to the <i>mossy site</i></h3>
 <p>A lot of stuff is probably broken because I recently migrated my ENTIRE site to 11ty and Github and all that. Sorry!</p>
@@ -18,32 +16,45 @@ tags:
 </p>
 {% endfor %}
 
-{{ macroWindow.windowBottom() }}
+{% endwindow %}
 
 <br>
 
-{{ macroWindow.windowTop("stamps.html", "stamps") }}
+{% window "webcollections.html", "webcollections" %}
 <p>Here's my stamp collection! Hover over a stamp to see who made it.</p>
+
 {% for image in collections.stamps %}
 <img src='{{ image }}' id='{{ image }}' alt='This alt should be replaced.' title='This title should be replaced.'>
 {% endfor %}
 
-<script type = "text/javascript">
+<p>Blinkies (I only have one for now)</p>
+
+{% for image in collections.blinkies %}
+<img src='{{ image }}' id='{{ image }}' alt='This alt should be replaced.' title='This title should be replaced.'>
+{% endfor %}
+
+<p>Look at all these cool bumper stickers! Get your own at <a href="https://www.internetbumperstickers.com">internetbumperstickers.com</a>!</p>
+
+{% for image in collections.bumperstickers %}
+<img src='{{ image }}' alt='Internet Bumper Sticker'>
+{% endfor %}
+
+<script type="text/javascript">
   {% for image in collections.stamps %}
   document.getElementById('{{ image }}').setAttribute("alt", createTitle("{{ image }}"));
   document.getElementById('{{ image }}').setAttribute("title", createTitle("{{ image }}"));
   {% endfor %}
-</script>
-{{ macroWindow.windowBottom() }}
 
-{{ macroWindow.windowTop("bumperstickers.html", "bumperstickers") }}
-<p>Look at all these cool bumper stickers! Get your own at <a href="https://www.internetbumperstickers.com">internetbumperstickers.com</a>!</p>
-{% for image in collections.bumperstickers %}
-<img src='{{ image }}' alt='Internet Bumper Sticker'>
-{% endfor %}
-{{ macroWindow.windowBottom() }}
+  {% for image in collections.blinkies %}
+  document.getElementById('{{ image }}').setAttribute("alt", createTitle("{{ image }}"));
+  document.getElementById('{{ image }}').setAttribute("title", createTitle("{{ image }}"));
+  {% endfor %}
+</script>
+{% endwindow %}
 
 {% for item in indexWindows %}
 <br>
-{{ macroWindow.window(item.name, item.id, item.windowcontent) }}
+{% window "{{ item.name }}", "{{ item.id }}" %}
+{{ item.windowcontent }}
+{% endwindow %}
 {% endfor %}
