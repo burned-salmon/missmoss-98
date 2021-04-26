@@ -63,6 +63,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/projects/analoghorror");
   eleventyConfig.addWatchTarget("./src/projects/analoghorror/");
 
+  eleventyConfig.addPassthroughCopy("./src/toys/girb");
+
   //Add shortcodes
 
   eleventyConfig.addPairedShortcode("window", function(content, title, id) {
