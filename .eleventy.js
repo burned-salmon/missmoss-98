@@ -1,56 +1,71 @@
 // Import packages and initialize variables
 const fg = require('fast-glob');
-var newVal = "";
-var newArray = [];
 
 // Functions for importing the images
-function prepImageArray(value) {
-  newVal = String(value);
-  newVal = newVal.slice(4);
-  newArray.push(newVal);
+function prepImageArray(value, index, arr) {
+  arr[index] = value.slice(4);
 }
 
-// blinkies
-const blinkyImageSrc = fg.sync(['**/150x20/*', '!**/public']);
-var blinkyFilePaths = [];
-blinkyImageSrc.forEach(prepImageArray);
-blinkyFilePaths = newArray;
-newArray = [];
-
-// internetbumperstickers.com
-const bumperImageSrc = fg.sync(['**/250x40/*', '!**/public']);
-var bumperFilePaths = [];
-bumperImageSrc.forEach(prepImageArray);
-bumperFilePaths = newArray;
-newArray = [];
-
-// Stamps
-const stampImageSrc = fg.sync(['**/99x56/*', '!**/public']);
-var stampFilePaths = [];
-stampImageSrc.forEach(prepImageArray);
-stampFilePaths = newArray;
-newArray = [];
-
-// Stickers
-const stickerImageSrc = fg.sync(['**/stickers/*', '!**/public']);
-var stickerFilePaths = [];
-stickerImageSrc.forEach(prepImageArray);
-stickerFilePaths = newArray;
-newArray = [];
+let cols = [{
+    name: 'blinkies',
+    path: '**/150x20/*'
+  },
+  {
+    name: 'bumperstickers',
+    path: '**/250x40/*'
+  },
+  {
+    name: 'stamps',
+    path: '**/99x56/*'
+  },
+  {
+    name: 'mm_ears',
+    path: '**/monstermachine/ear*'
+  },
+  {
+    name: 'mm_arms',
+    path: '**/monstermachine/arm*'
+  },
+  {
+    name: 'mm_limbs',
+    path: '**/monstermachine/limb*'
+  },
+  {
+    name: 'mm_feet',
+    path: '**/monstermachine/foot*'
+  },
+  {
+    name: 'mm_toes',
+    path: '**/monstermachine/toes*'
+  },
+  {
+    name: 'mm_wings',
+    path: '**/monstermachine/wing*'
+  },
+  {
+    name: 'mm_eyes',
+    path: '**/monstermachine/eye*'
+  },
+  {
+    name: 'mm_mouths',
+    path: '**/monstermachine/mouth*'
+  },
+  {
+    name: 'mm_bodies',
+    path: '**/monstermachine/body*'
+  },
+  {
+    name: 'mm_patches',
+    path: '**/monstermachine/patch*'
+  },
+  {
+    name: 'mmc_melonking',
+    path: '**/monstermachine/melonking*'
+  }
+];
 
 //Create collections so you can access the data in your templates
 module.exports = function(eleventyConfig) {
-  /*
-  eleventyConfig.setTemplateFormats([
-    "html",
-    "njk",
-    "css",
-    "png",
-    "gif",
-    "woff",
-    "woff2"
-  ]);
-    */
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addWatchTarget("./src/css/");
@@ -60,8 +75,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/img/");
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addWatchTarget("./src/fonts/");
-  eleventyConfig.addPassthroughCopy("./src/projects/analoghorror");
-  eleventyConfig.addWatchTarget("./src/projects/analoghorror/");
+  eleventyConfig.addPassthroughCopy("./src/projects");
+  eleventyConfig.addWatchTarget("./src/projects/");
+  eleventyConfig.addPassthroughCopy("./src/games");
+  eleventyConfig.addWatchTarget("./src/games/");
 
   eleventyConfig.addPassthroughCopy("./src/toys/girb");
 
@@ -85,23 +102,15 @@ module.exports = function(eleventyConfig) {
     </section>`;
   });
 
-  //Create collections of images
-
-  eleventyConfig.addCollection('blinkies', function(collection) {
-    return blinkyFilePaths;
-  });
-
-  eleventyConfig.addCollection('bumperstickers', function(collection) {
-    return bumperFilePaths;
-  });
-
-  eleventyConfig.addCollection('stamps', function(collection) {
-    return stampFilePaths;
-  });
-
-  eleventyConfig.addCollection('stickers', function(collection) {
-    return stickerFilePaths;
-  });
+  //This code was kindly given to me by MelonKing :D
+  for (let i = 0; i < cols.length; i++) {
+    var col = cols[i];
+    col.result = fg.sync([col.path, '!**/public']);
+    col.result.forEach(prepImageArray);
+    eleventyConfig.addCollection(col.name, function(collection) {
+      return cols[i].result;
+    });
+  }
 
   return {
     htmlTemplateEngine: 'njk',

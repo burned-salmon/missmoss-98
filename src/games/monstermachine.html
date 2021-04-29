@@ -2,12 +2,13 @@
 title: Monster Machine
 tags:
 - games
-layout: shrine.njk
+layout: blank.njk
 ---
 <style>
   body {
     background-color: #222;
   }
+
   .box {
     width: 60%;
     margin-top: 5px;
@@ -97,99 +98,72 @@ layout: shrine.njk
     <p>Once you're done, you can adopt your creation and let it live on your website. Make sure to put this certificate somewhere on the site so people know where you got your monster from!</p>
 
     <center>
-      <a href="https://missmoss.neocities.org/games/monstermachine"><img src="https://i.imgur.com/Jwt0vWF.png" style="position:relative;"></a><br>
+      <a href="https://missmoss.neocities.org/games/monstermachine"><img src="https://i.imgur.com/Jwt0vWF.png" alt="" style="position:relative;"></a><br>
       <textarea><a href="https://missmoss.neocities.org/games/monstermachine"><img src="https://i.imgur.com/Jwt0vWF.png"></a></textarea>
     </center>
     <br>
 
-    <img src="/img/monstermachine/ear_triangle1.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/ear_triangle2.png" style="z-index:2;" class="dragme">
+    {% for image in collections.mm_ears %}
+    <img src='/{{ image }}' alt="" style="z-index:2;" class="dragme">
+    {% endfor %}
     <br>
-    <img src="/img/monstermachine/arm_realistic1.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/arm_realistic2.png" style="z-index:2;" class="dragme">
+    {% for image in collections.mm_arms %}
+    <img src='/{{ image }}' alt="" style="z-index:2;" class="dragme">
+    {% endfor %}
     <br>
-    <img src="/img/monstermachine/limb_pointy1.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/limb_pointy2.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/limb_pointy3.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/limb_pointy4.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/limb_pointy5.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/limb_tentacle1.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/limb_tentacle2.png" style="z-index:2;" class="dragme">
+    {% for image in collections.mm_limbs %}
+    <img src='/{{ image }}' alt="" style="z-index:2;" class="dragme">
+    {% endfor %}
     <br>
-    <img src="/img/monstermachine/foot_chunkleft.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/foot_chunkright.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/foot_pointleft.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/foot_pointright.png" style="z-index:2;" class="dragme">
+    {% for image in collections.mm_feet %}
+    <img src='/{{ image }}' alt="" style="z-index:2;" class="dragme">
+    {% endfor %}
     <br>
-    <img src="/img/monstermachine/toes_left2.png" style="z-index:3;" class="dragme">
-    <img src="/img/monstermachine/toes_left3.png" style="z-index:3;" class="dragme">
-    <img src="/img/monstermachine/toes_right2.png" style="z-index:3;" class="dragme">
-    <img src="/img/monstermachine/toes_right3.png" style="z-index:3;" class="dragme">
+    {% for image in collections.mm_toes %}
+    <img src='/{{ image }}' alt="" style="z-index:2;" class="dragme">
+    {% endfor %}
     <br>
-    <img src="/img/monstermachine/wing_dragonleft.png" style="z-index:0;" class="dragme">
-    <img src="/img/monstermachine/wing_dragonright.png" style="z-index:0;" class="dragme">
-    <img src="/img/monstermachine/wing_fairyleft.png" style="z-index:0;" class="dragme">
-    <img src="/img/monstermachine/wing_fairyright.png" style="z-index:0;" class="dragme">
-
+    {% for image in collections.mm_wings %}
+    <img src='/{{ image }}' alt="" style="z-index:2;" class="dragme">
+    {% endfor %}
+    <br>
+    {% for image in collections.mm_eyes %}
+    <img src='/{{ image }}' alt="" style="z-index:4;" class="dragme">
+    {% endfor %}
+    <br>
+    {% for image in collections.mm_mouths %}
+    <img src='/{{ image }}' alt="" style="z-index:3;" class="dragme">
+    {% endfor %}
   </div>
 
   <div class="box">
-    <img src="/img/monstermachine/eye_c1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_c2.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_dl1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_dr1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_dr2.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_u1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_ur1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_button1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_button2.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_cyclops.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_eyelashes1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_eyelashes2.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_tired1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_tired2.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_triangle1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_triangle2.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_x1.png" style="z-index:4;" class="dragme">
-    <img src="/img/monstermachine/eye_x2.png" style="z-index:4;" class="dragme">
-    <br>
-    <img src="/img/monstermachine/mouth_big1.png" style="z-index:3;" class="dragme">
-    <img src="/img/monstermachine/mouth_big2.png" style="z-index:3;" class="dragme">
-    <img src="/img/monstermachine/mouth_big3.png" style="z-index:3;" class="dragme">
-    <img src="/img/monstermachine/mouth_big4.png" style="z-index:3;" class="dragme">
-    <img src="/img/monstermachine/mouth_little1.png" style="z-index:3;" class="dragme">
-    <img src="/img/monstermachine/mouth_little2.png" style="z-index:3;" class="dragme">
-
+    <h3>Community Parts</h3>
+    <h4>MelonKing</h4>
+    {% for image in collections.mmc_melonking %}
+    <img src='/{{ image }}' alt="" style="z-index:3;" class="dragme">
+    {% endfor %}
   </div>
 
-  <div class="box" style="color:white; background-color:#00ff00; height:600px;">
+  <div class="box" alt="" style="color:white; background-color:#00ff00; height:600px;">
     <p>Assemble your monster here!</p>
-    <img src="/img/monstermachine/extra_exclamation1.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/extra_exclamation2.png" style="z-index:2;" class="dragme">
-    <img src="/img/monstermachine/extra_heart.png" style="z-index:9;" class="dragme">
-    <img src="/img/monstermachine/extra_star.png" style="z-index:9;" class="dragme">
+    <img src="./extra_exclamation1.png" alt="" style="z-index:2;" class="dragme">
+    <img src="./extra_exclamation2.png" alt="" style="z-index:2;" class="dragme">
+    <img src="./extra_heart.png" alt="" style="z-index:9;" class="dragme">
+    <img src="./extra_star.png" alt="" style="z-index:9;" class="dragme">
   </div>
 
   <div class="box">
     <p>More parts down here...</p>
 
-    <img src="/img/monstermachine/body_blob1.png" style="z-index:1;" class="dragme">
-    <img src="/img/monstermachine/body_blob2.png" style="z-index:1;" class="dragme">
-    <img src="/img/monstermachine/body_circle1.png" style="z-index:1;" class="dragme">
-    <img src="/img/monstermachine/body_circle2.png" style="z-index:1;" class="dragme">
-    <img src="/img/monstermachine/body_cylinder.png" style="z-index:1;" class="dragme">
-    <img src="/img/monstermachine/body_dome1.png" style="z-index:1;" class="dragme">
-    <img src="/img/monstermachine/body_oval1.png" style="z-index:1;" class="dragme">
-    <img src="/img/monstermachine/body_triangle1.png" style="z-index:1;" class="dragme">
+    {% for image in collections.mm_bodies %}
+    <img src='/{{ image }}' alt="" style="z-index:1;" class="dragme">
+    {% endfor %}
 
     <p>Want to connect multiple body parts together? Here are some patches to help blend the outlines:</p>
-    <img src="/img/monstermachine/patch_1.png" style="z-index:8;" class="dragme">
-    <img src="/img/monstermachine/patch_1.png" style="z-index:8;" class="dragme">
-    <img src="/img/monstermachine/patch_1.png" style="z-index:8;" class="dragme">
-    <img src="/img/monstermachine/patch_2.png" style="z-index:8;" class="dragme">
-    <img src="/img/monstermachine/patch_2.png" style="z-index:8;" class="dragme">
-    <img src="/img/monstermachine/patch_2.png" style="z-index:8;" class="dragme">
-    <img src="/img/monstermachine/patch_3.png" style="z-index:8;" class="dragme">
-    <img src="/img/monstermachine/patch_3.png" style="z-index:8;" class="dragme">
-    <img src="/img/monstermachine/patch_3.png" style="z-index:8;" class="dragme">
+
+    {% for image in collections.mm_patches %}
+    <img src='/{{ image }}' alt="" style="z-index:8;" class="dragme">
+    <img src='/{{ image }}' alt="" style="z-index:8;" class="dragme">
+    <img src='/{{ image }}' alt="" style="z-index:8;" class="dragme">
+    {% endfor %}
   </div>

@@ -1,5 +1,9 @@
 module.exports = [
   {
+    date: "2021-04-29",
+    content: "I have changed a lot of things! Unfortunately, a good chunk of it is stuff only I can see, and all it does is help make the website creation process a little easier. I have added some parts to the Monster Machine made by MelonKing, so thanks to him for that!"
+  },
+  {
     date: "2021-04-16",
     content: "I've been working on something cool. It's gonna be a little while before it's ready."
   },
