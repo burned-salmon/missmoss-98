@@ -1,7 +1,7 @@
 module.exports = [
   {
     date: "2021-04-30",
-    content: "Go check out the brand new fish tank, as well as the Teeny Tower residential building!"
+    content: "Go check out the Teeny Tower residential building! My rooms aren't done yet, I'll add them once I'm ready."
   },
   {
     date: "2021-04-29",
