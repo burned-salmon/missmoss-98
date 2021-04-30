@@ -1,47 +1,3 @@
-/* Right to left marquee */
-.marquee-rtl {
-  height: 50px;
-  overflow: hidden;
-  position: relative;
-}
-
-.marquee-rtl span {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  line-height: 50px;
-  text-align: center;
-  /* Starting position */
-  -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-  /* Apply animation to this element */
-  -moz-animation: scroll-left 15s linear infinite;
-  -webkit-animation: scroll-left 15s linear infinite;
-  animation: scroll-left 15s linear infinite;
-}
-
-@-moz-keyframes marquee-rtl {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@-webkit-keyframes marquee-rtl {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 @keyframes marquee-rtl {
   0% {
     -moz-transform: translateX(100%);
@@ -56,24 +12,17 @@
   }
 }
 
-/* Bounce horizontally */
-@-moz-keyframes marquee-h {
+@keyframes marquee-ltr {
   0% {
-    -moz-transform: translateX(50%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%)
   }
 
   100% {
-    -moz-transform: translateX(-50%);
-  }
-}
-
-@-webkit-keyframes marquee-h {
-  0% {
-    -webkit-transform: translateX(50%);
-  }
-
-  100% {
-    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -95,25 +44,27 @@
   }
 }
 
-.marquee-h {
+.marquee {
   height: 50px;
   overflow: hidden;
   position: relative;
 }
 
-.marquee-h span {
+.marquee span {
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
   line-height: 50px;
   text-align: center;
-  /* Starting position */
-  -moz-transform: translateX(50%);
-  -webkit-transform: translateX(50%);
+}
+
+.righttoleft span {
+  transform: translateX(100%);
+  animation: scroll-left 15s linear infinite;
+}
+
+.horizontal span {
   transform: translateX(50%);
-  /* Apply animation to this element */
-  -moz-animation: marquee-h 15s linear infinite alternate;
-  -webkit-animation: marquee-h 15s linear infinite alternate;
   animation: marquee-h 15s linear infinite alternate;
 }

@@ -1,5 +1,9 @@
 module.exports = [
   {
+    date: "2021-04-30",
+    content: "Go check out the brand new fish tank, as well as the Teeny Tower residential building!"
+  },
+  {
     date: "2021-04-29",
     content: "I have changed a lot of things! Unfortunately, a good chunk of it is stuff only I can see, and all it does is help make the website creation process a little easier. I have added some parts to the Monster Machine made by MelonKing, so thanks to him for that!"
   },
