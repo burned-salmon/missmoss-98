@@ -1,5 +1,9 @@
 module.exports = [
   {
+    date: "2021-05-05",
+    content: "Fixed the feedback button. Tried to add a flag map, but it didn't work."
+  },
+  {
     date: "2021-04-30",
     content: "Go check out the Teeny Tower residential building! My rooms aren't done yet, I'll add them once I'm ready."
   },

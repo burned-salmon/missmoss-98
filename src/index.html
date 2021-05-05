@@ -8,14 +8,18 @@ tags:
 {% window "index.html", "home" %}
 
 <h3>Welcome to the <i>mossy site</i></h3>
-<p>A lot of stuff is probably broken because I recently migrated my ENTIRE site to 11ty and Github and all that. Sorry!</p>
+<p>I hope you enjoy your stay! Don't mind the animals, I'm getting a habitat ready for them.</p>
 <a href="https://adeleine.neocities.org/"><img src="https://adeleine.neocities.org/images/monsters/snailhogalbino.png"></a>
+<a href="https://theenderdraco.neocities.org/pound.html"><img src="https://theenderdraco.neocities.org/pets/snap2.png"></a>
+<br>
 
 {% for update in indexUpdates %}
 <p><b>[<time datetime="{{ update.date }}">{{ update.date }}</time>]</b>
   {{ update.content }}
 </p>
 {% endfor %}
+
+<a href="https://info.flagcounter.com/ZONP"><img src="https://s04.flagcounter.com/map/ZONP/size_s/txt_000000/border_CCCCCC/pageviews_0/viewers_0/flags_0/" alt="Flag Counter" border="0"></a>
 
 {% endwindow %}
 
@@ -53,9 +57,20 @@ tags:
 </script>
 {% endwindow %}
 
-{% for item in indexWindows %}
 <br>
-{% window "{{ item.name }}", "{{ item.id }}" %}
-{{ item.windowcontent }}
+
+{% window "feedback.html", "feedback" %}
+<DIV align=left><TABLE height=128 cellSpacing=0 cellPadding=0 width=512 border=0><TBODY><TR><TD vAlign=top width=512 height=128><FORM name=myform><P>Give me feedback:</P><P><TEXTAREA onkeypress="return changer()" name=mytext rows=10 wrap=virtual cols=40></TEXTAREA><BR><BR><button onclick=resetit()>Submit Feedback</button></P></FORM></TD></TR></TBODY></TABLE></DIV>
 {% endwindow %}
-{% endfor %}
+
+<br>
+
+{% window "map.png", "map" %}
+<a href="https://info.flagcounter.com/ZONP"><img src="https://s04.flagcounter.com/map/ZONP/size_s/txt_000000/border_CCCCCC/pageviews_0/viewers_0/flags_0/" alt="Flag Counter" border="0"></a>
+{% endwindow %}
+
+<br>
+
+{% window "upside_down.txt", "udt" %}
+<iframe src="http://www.upsidedowntext.com/widgetF" frameborder="0" width="390px" height="360px"></iframe>
+{% endwindow %}

@@ -37,5 +37,9 @@ module.exports = [{
   {
     name: "Sadness",
     link: "https://sadgrl.online/webgarden.html"
+  },
+  {
+    name: "TheEnderDraco",
+    link: "https://theenderdraco.neocities.org/webgarden.html"
   }
 ];
