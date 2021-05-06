@@ -77,6 +77,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/fonts/");
   eleventyConfig.addPassthroughCopy("./src/projects");
   eleventyConfig.addWatchTarget("./src/projects/");
+  eleventyConfig.addPassthroughCopy("./src/ring");
+  eleventyConfig.addWatchTarget("./src/ring/");
   eleventyConfig.addPassthroughCopy("./src/games");
   eleventyConfig.addWatchTarget("./src/games/");
 
