@@ -1,5 +1,9 @@
 module.exports = [
   {
+    date: "2022-03-08",
+    content: "Someone showed interest in adding to Webgardens again so I just had to stop procrastinating on updating the site!"
+  },
+  {
     date: "2021-05-05",
     content: "Fixed the feedback button. Tried to add a flag map, but it didn't work."
   },
