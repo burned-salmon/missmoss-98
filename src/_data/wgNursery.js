@@ -6,10 +6,12 @@ module.exports = [{
     name: "44nifty",
     link: "https://44nifty.com/webgarden.html"
   },
+  /*
   {
     name: "Adeline",
     link: "https://adeleine.neocities.org/webgarden.html"
   },
+  */
   {
     name: "Blissnet",
     link: "https://blissnet.neocities.org/Webgarden.html"
